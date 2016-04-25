@@ -1,0 +1,473 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>JQuery DOM Manipulation</title>
+    <script  src="resources/MyJquery.js"></script>
+    <script  src="resources/jquery-1.9.1.js"></script>
+  </head>
+
+  <body>
+<div id="divText"></div>
+<div id="divHtml"></div>
+      <div id="divTest">
+               <b>Test</b>
+                <input type="text" id="txtTest" name="txtTest" value="Input field" />
+                <input type="submit" value="TestAjax" onclick="getAjax();">
+</div>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+<a href="http://www.google.com"  id="aGoogle1">Google Link</a><br>
+<a href="http://www.google.com" id="aGoogle2">Google Link(To be Changed)</a><br>
+<a href="http://www.google.com/" class="google">Google.com</a><br />
+<a href="http://www.google.co.uk/" class="google">Google UK</a><br />
+<a href="http://www.google.de/" class="google">Google DE</a><br />
+
+<a href="javascript:void(0);" onclick="ToggleClass(this);">Toggle class</a>&nbsp;
+
+<a href="javascript:void(0);" onclick="$(this).toggleClass('bold');$(this).attr( {
+    'title':'Jquery Simpler Method'
+});">Toggle class1</a><br>
+    <div id="divTestArea1">
+        <span>Test 1</span><br />
+        <div>Test 2</div>
+        <i>Test 3</i><br />
+</div>
+<a href="javascript:void(0);" onclick="$('#olTestList1').append('<li>Appended item</li>');">Append</a>&nbsp;&nbsp;
+<a href="javascript:void(0);" onclick="$('#olTestList1').prepend('<li>Prepended item</li>');">Prepend</a>
+
+<ol id="olTestList1">
+        <li>Existing item</li>
+        <li>Existing item</li>
+</ol>
+<a href="javascript:void(0);" onclick="AppendItemsToList();">Append items</a>
+<ol id="olTestList2"></ol>
+<a href="javascript:void(0);" onclick="PrependItemsToList();">Prepend(with PrependTo) items</a>
+<ol id="olTestList3"></ol>
+<a href="javascript:void(0)" onfocus="$('input.test1').before('<b>Before</b>');">Before</a>
+<a href="javascript:void(0)" onfocus="$('input.test1').after('<b>After</b>');">After</a><br>
+<input type="text" class="test1" value="Input 1" name="txtInput1" /><br />
+<input type="text" class="test1" value="Input 2" name="txtInput2" /><br />
+<a href="javascript:void(0);" onclick="InsertElements();">Insert elements</a>
+<br /><br />
+<span id="spnTest2">Hello world? </span><br>
+<a href="javascript:void(0);"  onclick="$('#divTestArea11').empty();">empty() div</a>
+<a href="javascript:void(0);" onmouseover="$('#divTestArea11 b').remove('.more');">remove() div</a>
+<div id="divTestArea11" style="height: 100px; width: 300px; padding: 20px; border: 1px solid silver; background-color: #eee;">
+        <small>Small text</small>
+        <i>Italic text</i>
+        <b>Bold text</b><br />
+        <b class="more">More bold text</b><br />
+        <b class="more">Even more bold text</b><br />
+
+</div>
+<a href="javascript:void(0);">Test 1</a>
+<a href="javascript:void(0);">Test 2</a>
+
+<div id="divArea" style="background-color: silver; width: 100px; height: 100px;">
+</div>&nbsp;&nbsp;<input id="whichkey" value="type something">
+<div id="log"></div><br><br>
+<script>$('#whichkey').on('mousedown',function(e){
+$('#log').html(e.type + ': ' + e.which );
+}); </script>
+<a href="javascript:void(0);">Test 1</a>
+<a href="javascript:void(0);">Test 2</a>
+
+<div align="center" id="divTestArea0">
+        <a href="javascript:void(0);" onclick="AddBox();">Add box</a>
+        <div class="test">This is a box</div><br><br>
+</div>
+<div align="center" id="divTestArea22">
+    
+
+</div>
+
+<form action="javascript:void%200" onmouseover="getSelectInfo(this)" >
+    <table border="0">
+        <tr><td>Choose one or more states: </td><td>
+        <select name="_state" multiple="multiple" size="4">
+            <option value="al">Alabama</option>
+            <option value="ak">Alaska</option>
+            <option value="az">Arizona</option>
+            <option value="ar">Arkansas</option>
+            <option value="ca">California</option>
+            <option value="co">Colorado</option>
+            <option value="ct">Connecticut</option>
+            <option value="de">Delaware</option>
+            <option value="dc">District of Columbia</option>
+            <option value="fl">Florida</option>
+            <option value="ga">Georgia</option>
+            <option value="hi">Hawaii</option>
+            <!snipped...-->
+        </select></td></tr>
+        <tr><td><span id="select_info" class=
+                "message">The server reports that you have chosen the
+                following abbreviated states: </span>
+        <tr><td>Choose your list content:</td>
+        <td>European countries:
+        <input type="radio" name="countryType" id="euro" value="euro" onmouseover="getSelectInfo(this);" />
+        South American countries:
+        <input type="radio" name="countryType" id="southam" value="southam" />
+        </td></tr>
+        <tr><td><div id="newsel"></div></td></tr>
+    </table></form>
+<div id="newsel">my returned Div</div>
+<script>
+function getAjax(){
+
+
+var txt = "simony@yahoo.com";
+var  loadUrl = "http://localhost/TeleSNOS/home1.php?action=ajax&user=AFAM";
+httpRequest("GET",loadUrl,true);
+
+var txt = "simony@yahoo.com";
+    var  loadUrl = "http://localhost:8084/SnoSSoftwareTest/servlets/RequestProcessing?action=ajax&user="+txt;
+    var url = "http://localhost:8084/BiddingApp/ajax_select_list?action="+encodeURIComponent("ajax")+"&"+"val="+encodeURIComponent("southam");
+    
+    $.get(loadUrl,{
+        action:"ajax",
+        user:txt
+
+    }, function(data, textStatus)
+
+        {
+            alert("Response from server: "+data);
+        });
+        
+}
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+ /*
+        $(function(){
+            alert("Text: "+$("#divText").text("A dynamically set text").toString());
+            alert("Html: "+$("#divHtml").html("<b>A <i>dynamically set</i> html String </b>").toString());
+            alert("Value: "+$("#txtTest").val("A dynamically set value").toString());
+
+            alert("Text: " + $("#txtTest").text());
+            alert("HTML: " + $("#txtTest").html());
+            alert("Value: " + $("#txtTest").val())
+        });
+        */
+        $(function()
+{
+        $("p").text(function(index, oldText) {
+                return "Existing text: " + oldText + ". New text: A dynamically set text (#" + index + ")";
+        });
+});
+$(function()
+{
+    alert("The url is "+$("#aGoogle1").attr("href"));
+    $("#aGoogle2").attr({
+        "href": "http://www.google.co.uk",
+        "name":"Google.co.uk",
+        "title" :"Click to go to UK Google version"
+    });
+    $("a.google").attr("href", function(index, oldValue)
+        {
+                return oldValue + "imghp?tab=wi";
+        });
+});
+function ToggleClass(sender)
+{
+    if($(sender).hasClass("bold"))
+        $(sender).removeClass("bold");
+    else
+        $(sender).addClass("bold");
+}
+$(function()
+{
+    $("#divTestArea1 span,#divTestArea1 i").addClass("blue");
+    $("#divTestArea1 div").addClass("bold blue");
+});
+function AppendItemsToList()
+{
+        var item1 = $("<li></li>").text("Item 1");
+        var item2 = "<li>Item 2</li>";
+        var item3 = document.createElement("li");
+        item3.innerHTML = "Item 3";
+        var item4=document.createElement("li");
+        item4.innerHTML='ITEM 4';
+        var item5=$("<li></li>").text("ItEm 5");
+
+        $("#olTestList2").append(item1, item2, item3,item4,item5);
+}
+function PrependItemsToList()
+{
+        $("#olTestList3").prepend($("<li></li>").text("prepend() item"));
+        $("<li></li>").text("prependTo() item").prependTo("#olTestList3");
+}
+function InsertElements()
+{
+        var element1 = $("<b></b>").text("Hello ");
+        var element2 = "<i>there </i>";
+        var element3 = document.createElement("u");
+        element3.innerHTML = "jQuery!";
+
+        $("#spnTest2").before(element1, element2, element3);
+}
+/*
+$(function()
+{
+        //$("a, span").bind("mouseover", function() {
+                //alert('Hello, world!');
+
+        });
+});
+
+$(function()
+{
+        $("a").bind("mouseout", function() {
+                alert($(this).text());
+        });
+});
+$("#divArea").bind("mousemove", function(event)
+{
+        $(this).text("The X-axis is:"+event.pageX + ",While the Y-axis is:" + event.pageY);
+});
+/*
+
+$(function(){
+    
+    var msg="Good Morning!";
+     var name="\nAfam!";
+      var from="\nfrom Enugu";
+    $("a").bind("click", {message:msg,name:name,loc:from}, function(event){
+        msg = "Changed msg";
+        alert(event.data.message);
+         alert(event.data.name);
+         alert(event.data.loc);
+    });
+    $("a").unbind("click mouseout");
+     
+
+});
+$(function()
+{
+        $("a").bind("click", function() {
+                $("a").unbind("click");
+                alert("First and only message from me!");
+        });
+});
+
+$(function()
+{
+        $("a").bind("click", function() {
+                alert("First event handler!");
+        });
+
+        $("a").bind("click", function() {
+                alert("Second event handler!");
+                $("a").unbind("click");
+        });
+});
+*/
+
+$(function()
+{
+        var handler1 = function()
+        {
+                alert("First event handler!");
+        }
+
+        var handler2 = function()
+        {
+                alert("Second event handler!");
+                $("a").unbind("click", handler2);
+        }
+
+        $("a").bind("click", handler1);
+        $("a").bind("click", handler2);
+});
+/*
+$(function()
+{
+        $(".test").live("mouseover", function()
+        {
+                $(this).css("background-color", "blue");
+        }).live("mouseout", function()
+        {
+                $(this).css("background-color", "red");
+        });
+});
+*/
+function AddBox()
+{
+        var div = $("<div></div>").addClass("test").text("Another box");
+        $("#divTestArea0").append(div);
+}
+/*
+$(function(){
+    $("#divTestArea22").load("content.html #divContent",function(responseText,statusText,xhr){
+        if(statusText=="success")
+           
+                    alert("Successfully Loaded Content");
+                alert("The response Text is:\n "+responseText);
+            
+             //if(statusText=="error")
+               
+                    //alert("An  "+xhr.status+" error occured with message: "+xhr.statusText);
+                if(statusText == "error")
+                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
+
+
+                
+
+    });
+})
+*/
+
+
+$(function()
+{
+    
+      
+        //httpRequest("GET",loadUrl,true,handleResponse);
+});
+
+
+function handleResponse1(){
+    try{
+        if(request.readyState == 4){
+            alert("Get Ready for Respose...because readystate is:"+request.readyState+"\nand the text is "+request.statusText);
+            
+            if(request.status ==200){
+                //if(formObjTyp.length > 0 && formObjTyp == "input") {
+                 alert("preparing for Respose...:");
+                    var resp =  request.responseText|| "no response text";
+                    alert("The Response is here");
+                     var newsel = document.getElementById("newsel");
+                     stylizeDiv(resp,newsel);
+                     //var sel = document.createElement("select");
+                      //sel.setAttribute("name","countries");
+                      //createOptions(sel,objt);
+                     // reset(newsel);
+                      //newsel.appendChild(sel);
+
+                         //func = new Function("return "+resp);
+                            //objt  = func(  );
+                           /* objt = eval(resp);
+                            var div = document.getElementById("json");
+                            stylizeDiv(resp,div);
+                            div = document.getElementById("props");
+                            div.innerHTML="<h4>In object form...</h4>"+
+                              "<h5>Properties</h5>TestName= "+
+                              objt.TestName +"<br />Description="+
+                              objt.Description+ "<br />Rating="+
+                              objt.Rating;
+
+                    if (resp != null){
+                        //return value is an array
+                        //objt = eval(resp);
+                         func = new Function("return "+resp);
+                        objt = func(  );
+                        //create a new select element
+                        var sel = document.createElement("select");
+                        sel.setAttribute("name","countries");
+                        //give the select element some options based
+                        //on a list of countries from the server
+                        createOptions(sel,objt);
+                        //the div element within which the select appears
+                        var newsel = document.getElementById("newsel");
+                        reset(newsel);
+                        newsel.appendChild(sel);
+                    }
+                }
+                else if(formObjTyp.length > 0 && formObjTyp == "select"){
+                    resp =  request.responseText;
+                    //return value is a JSON object literal
+                     func = new Function("return "+resp);
+                    var objt1 = func(  );
+                    var fld = document.getElementById("select_info");
+                    if(fld != null){
+                        fld.innerHTML = "The server <strong>"+ objt.Server_info+
+                          "</strong> reports that you have chosen"+
+                          "<br /> the following "+
+                          "abbreviated states: <strong>"+
+                          objt1.Selected_options+"</strong>";
+                    }*/
+
+               // }
+            } else {
+                //request.status is 503 if the application isn't available;
+                //500 if the application has a bug
+                alert("A problem occurred with communicating between "+
+                      "the XMLHttpRequest object and the server program.\nThe cause is\n "+request.status);
+                  //alert("Error: status code is " + request.status);
+            }
+        }//end outer if
+    } catch (err) {
+        alert("It does not appear that the server is available"+
+              " for this application. Please"+
+              " try again very soon. \\nError: "+err.message);
+
+    }
+}
+
+
+function initReq(reqType,url,bool){
+    try{
+        /* Specify the function that will handle the
+        HTTP response */
+        request.onreadystatechange=handleResponse1;
+        request.open(reqType,url,bool);
+        request.send(null);
+    } catch (errv) {
+        alert(
+                "The application cannot contact the server "+
+                "at the moment. "+
+                "Please try again in a few seconds." );
+    }
+}
+/* Wrapper function for constructing a request object.
+ Parameters:
+  reqType: The HTTP request type, such as GET or POST.
+  url: The URL of the server program.
+  asynch: Whether to send the request asynchronously or not. */
+function httpRequest(reqType,url,asynch){
+    //Mozilla-based browsers
+    if(window.XMLHttpRequest){
+        request = new XMLHttpRequest(  );
+    } else if (window.ActiveXObject){
+        request=new ActiveXObject("Msxml2.XMLHTTP");
+        if (! request){
+            request=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+     }
+    //the request could still be null if neither ActiveXObject
+    //initialization succeeded
+    if(request){
+       initReq(reqType,url,asynch);
+    } else {
+        alert("Your browser does not permit the use of all "+
+              "of this application's features!");}
+}
+
+function stylizeDiv(bdyTxt,div){
+   reset(div);
+    div.innerHTML=" ";
+    div.style.fontSize="1.2em";
+    div.style.backgroundColor="yellow";
+   // div.appendChild(document.createTextNode(bdyTxt));
+    div.innerHTML=bdyTxt;
+
+}
+function reset(elObject){
+    if(elObject != null && elObject.hasChildNodes(  )){
+        for(var i = 0; i < elObject.childNodes.length; i++){
+            elObject.removeChild(elObject.firstChild);
+        }
+    }
+}
+
+
+</script>
+
+  
+  </body>
+</html>

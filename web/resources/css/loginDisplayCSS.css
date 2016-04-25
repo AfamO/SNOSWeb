@@ -1,0 +1,448 @@
+@charset "utf-8";
+/* CSS Document */
+
+#MessageTable {
+	/*
+	background:url(../images/login_form_bg.png) no-repeat;
+	z-index:100;
+	*/
+	
+   margin-left:0px;
+   padding-left:10px;
+   padding-top:5px;
+   font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+   font-weight:bold;
+   margin-top:40px;
+   color: #008000;
+   height:5px;
+}
+
+
+#MessageTable tr:hover{
+    /*background-color:#CCC;
+	background-color:silver;*/
+	background-color:#CCCCFF;
+    color:#00F;
+    cursor:pointer;
+}
+
+#MessageTable tr {
+  display:table-row;
+  padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+  height:5px;
+
+  }
+ #MessageTable td, th {
+  display:table-cell;
+  padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+  word-spacing:.2em;
+  white-space: nowrap;
+  padding: 0 4px 0 0;
+  }
+#MessageTable tr:visited{
+	background-color:#CCC;
+	color:#93F;
+}
+
+.Action_tab
+ {
+
+  background-image:url(../images/action2.png);
+  width:140px;
+  background-repeat:no-repeat;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  -moz-border-radius:25px;
+ -webkit-border-radius:25px;
+  border-radius:25px;
+   cursor:pointer;
+ }
+ .next_previous
+ {
+font:'Times New Roman';
+size: 5px;
+color:blue;
+ }
+ 
+#LoginTableContainer{
+	width:200px;
+	height:200px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+	
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	margin-top: 10px;
+	
+}
+
+#LoginTableContainer table{
+	width:200;
+	height:200;
+	position:absolute;
+
+
+	
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+
+	
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+
+	
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+
+
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+	left: -225px;
+	top: -29px;
+}
+
+
+#ViewsmsTableContainer{
+	width:750px;
+        height:auto;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	margin-top: 10px;
+      /*padding-top:30px;
+
+        margin-left:30px;*/
+	
+
+
+}
+
+
+#ViewsmsTableContainer table{
+	width:100%;
+	position:absolute;
+	top:0px;
+	left:-2px;
+
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+
+#sub{
+	color: #008000;
+	 border: 1px solid #008000;
+font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+font-weight:bold;
+	background:none;
+	height: 36px;
+	left: 26px;
+	margin-top:10px;
+
+	width: 200px;
+	text-indent: 8px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	outline:none;
+    margin-bottom:20px;
+}
+#subscribeformContainer{
+	width:100%;
+	height:100px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	
+}
+
+#subscribeformContainer form{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+#viewUser{
+    text-align:center;
+    color:navy;
+    
+}
+
+.subscribeborder{
+ -moz-border-radius: 25px;
+ -webkit-border-radius:25px;
+	border-radius:25px;
+  margin-top:10px;
+	}
+
+ .tabborder{
+ -moz-border-radius: 25px;
+ -webkit-border-radius:25px;
+	border-radius:25px;
+ }
+.buttonDisplay{
+  -moz-border-radius: 25px;
+  -webkit-border-radius:25px;
+	border-radius:25px;
+        padding-left:4px;
+        padding-right:4px;
+        padding-top:1px;
+        padding-bottom:1px;
+        color:#FFF;
+        background-color:#009999;
+        cursor:pointer;
+}
+.regFieldSet
+{
+   -moz-border-radius: 25px;
+  -webkit-border-radius:25px;
+border-radius:25px;
+   width:500px;
+  margin-top:10px;
+border:1px solid #008000;
+}
+
+
+.smsFieldSet
+{
+   -moz-border-radius: 25px;
+  -webkit-border-radius:25px;
+border-radius:25px;
+   width:200px;
+  text-align:left;
+border:1px solid #008000;
+margin-top:10px;
+}
+
+.smsFieldSet  li a {
+
+    color: #555555;
+    display: block;
+    font-family: arial;
+    font-weight: bold;
+    padding: 6px 15px;
+  cursor: pointer;
+text-decoration:none;
+
+}
+
+.smsFieldSet li a:hover{
+    background:#155FB0;
+    color: #FFFFFF;
+    text-decoration: none;
+
+}
+
+
+
+/* Firefox Keyframe Animation */
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 8px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+/* Webkit keyframe animation */
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 10px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+
+#loginEmail{
+margin-top:10px;
+color: #008000;
+border: 1px solid #008000;
+font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+font-weight:bold;
+
+}
+
+#forgetpassword a{
+color:#0000FF; 
+font-size:12px; 
+font-weight:bold;
+}
+#forgetpassword a:hover{
+color:#FF00FF; 
+font-size:12px; 
+font-weight:bold;
+text-decoration:underline;
+}
+#loginPass{
+	margin-top:5px;
+	color: #008000;
+	 border: 1px solid #008000;
+font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+font-weight:bold;
+}
+
+
+#LoginformInputSubmit{
+	
+	/* Submit button */
+	-webkit-opacity: 0.9;
+-moz-opacity: 0.9;
+    opacity: 0.9;
+	
+	top:250px;
+	left:25px;
+	width: 100px;
+	margin-left:10px;
+	height:25px;
+	cursor:pointer;
+	border-radius:6px;
+	box-shadow:0 1px 1px #888;
+	border:none;
+	color:#fff;
+	font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+	font-weight:bold;
+	
+	/* CSS3 Gradients */
+	
+	background-image: linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(80,102,127)),
+		color-stop(0.5, rgb(87,109,136)),
+		color-stop(1, rgb(106,129,155))
+	);
+}
+
+#RegistrationPageTable{
+	width:650px;
+    height:500px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	margin-top:20px;
+    margin-bottom:20px;
+    
+}
+
+#RegistrationPageTable table{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+/* Firefox Keyframe Animation */
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 8px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+/* Webkit keyframe animation */
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 10px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}

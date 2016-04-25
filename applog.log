@@ -1,0 +1,81 @@
+2015-08-31 18:16:25,493 DEBUG [org.apache.http.headers] << Content-Length: 0
+2015-08-31 18:16:25,493 DEBUG [org.apache.http.headers] << Alternate-Protocol: 443:quic,p=1
+2015-08-31 18:16:25,493 DEBUG [org.apache.http.headers] << Alt-Svc: quic=":443"; p="1"; ma=604800
+2015-08-31 18:16:25,503 DEBUG [org.apache.http.impl.client.DefaultHttpClient] Connection can be kept alive indefinitely
+2015-08-31 18:16:25,563 DEBUG [org.apache.http.impl.conn.SingleClientConnManager] Releasing connection org.apache.http.impl.conn.SingleClientConnManager$ConnAdapter@14ff490
+2015-09-07 11:29:18,801 DEBUG [org.apache.http.impl.conn.SingleClientConnManager] Get connection for route HttpRoute[{s}->https://codename-one.appspot.com]
+2015-09-07 11:29:19,172 DEBUG [org.apache.http.impl.conn.DefaultClientConnectionOperator] Connecting to codename-one.appspot.com:443
+2015-09-07 11:29:20,128 DEBUG [org.apache.http.client.protocol.RequestAddCookies] CookieSpec selected: best-match
+2015-09-07 11:29:20,147 DEBUG [org.apache.http.client.protocol.RequestAuthCache] Auth cache not set in the context
+2015-09-07 11:29:20,147 DEBUG [org.apache.http.impl.client.DefaultHttpClient] Attempt 1 to execute request
+2015-09-07 11:29:20,147 DEBUG [org.apache.http.impl.conn.DefaultClientConnection] Sending request: POST /sendPushMessage HTTP/1.1
+2015-09-07 11:29:20,189 DEBUG [org.apache.http.wire] >> "POST /sendPushMessage HTTP/1.1[\r][\n]"
+2015-09-07 11:29:20,190 DEBUG [org.apache.http.wire] >> "Content-Length: 340[\r][\n]"
+2015-09-07 11:29:20,190 DEBUG [org.apache.http.wire] >> "Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1[\r][\n]"
+2015-09-07 11:29:20,190 DEBUG [org.apache.http.wire] >> "Host: codename-one.appspot.com[\r][\n]"
+2015-09-07 11:29:20,190 DEBUG [org.apache.http.wire] >> "Connection: Keep-Alive[\r][\n]"
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.wire] >> "User-Agent: Apache-HttpClient/4.1.2 (java 1.5)[\r][\n]"
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.wire] >> "[\r][\n]"
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> POST /sendPushMessage HTTP/1.1
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> Content-Length: 340
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> Host: codename-one.appspot.com
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> Connection: Keep-Alive
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.headers] >> User-Agent: Apache-HttpClient/4.1.2 (java 1.5)
+2015-09-07 11:29:20,191 DEBUG [org.apache.http.wire] >> "device=4949863060996096&packageName=com.teledom.snosapp&email=afamsimon%40gmail.com&type=1&auth=AIzaSyBT837SlAr-XzPtHzufXNF0Hbfe6ggaFKU&certPassword=m34N9G9d&body=FRONT+DOOR+OPEN&cert=https%3A%2F%2Fcodename-one-push-certificates.s3.amazonaws.com%2Fcom.teledom.snosapp_DevelopmentPushea852471-10ae-421d-b886-3db47be86e7f.p12&production=false"
+2015-09-07 11:29:20,586 DEBUG [org.apache.http.wire] << "HTTP/1.1 200 OK[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Date: Mon, 07 Sep 2015 10:29:59 GMT[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Content-Type: text/html[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Server: Google Frontend[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Content-Length: 0[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Alternate-Protocol: 443:quic,p=1[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "Alt-Svc: quic=":443"; p="1"; ma=604800[\r][\n]"
+2015-09-07 11:29:20,594 DEBUG [org.apache.http.wire] << "[\r][\n]"
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.impl.conn.DefaultClientConnection] Receiving response: HTTP/1.1 200 OK
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << HTTP/1.1 200 OK
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Date: Mon, 07 Sep 2015 10:29:59 GMT
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Content-Type: text/html
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Server: Google Frontend
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Content-Length: 0
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Alternate-Protocol: 443:quic,p=1
+2015-09-07 11:29:20,596 DEBUG [org.apache.http.headers] << Alt-Svc: quic=":443"; p="1"; ma=604800
+2015-09-07 11:29:20,603 DEBUG [org.apache.http.impl.client.DefaultHttpClient] Connection can be kept alive indefinitely
+2015-09-07 11:29:20,608 DEBUG [org.apache.http.impl.conn.SingleClientConnManager] Releasing connection org.apache.http.impl.conn.SingleClientConnManager$ConnAdapter@1adf2d7
+2015-10-05 16:20:06,506 DEBUG [org.apache.http.impl.conn.SingleClientConnManager] Get connection for route HttpRoute[{s}->https://codename-one.appspot.com]
+2015-10-05 16:20:22,466 DEBUG [org.apache.http.impl.conn.DefaultClientConnectionOperator] Connecting to codename-one.appspot.com:443
+2015-10-05 16:20:31,977 DEBUG [org.apache.http.client.protocol.RequestAddCookies] CookieSpec selected: best-match
+2015-10-05 16:20:31,997 DEBUG [org.apache.http.client.protocol.RequestAuthCache] Auth cache not set in the context
+2015-10-05 16:20:31,997 DEBUG [org.apache.http.impl.client.DefaultHttpClient] Attempt 1 to execute request
+2015-10-05 16:20:31,997 DEBUG [org.apache.http.impl.conn.DefaultClientConnection] Sending request: POST /sendPushMessage HTTP/1.1
+2015-10-05 16:20:32,016 DEBUG [org.apache.http.wire] >> "POST /sendPushMessage HTTP/1.1[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "Content-Length: 340[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "Host: codename-one.appspot.com[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "Connection: Keep-Alive[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "User-Agent: Apache-HttpClient/4.1.2 (java 1.5)[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.wire] >> "[\r][\n]"
+2015-10-05 16:20:32,020 DEBUG [org.apache.http.headers] >> POST /sendPushMessage HTTP/1.1
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.headers] >> Content-Length: 340
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.headers] >> Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.headers] >> Host: codename-one.appspot.com
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.headers] >> Connection: Keep-Alive
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.headers] >> User-Agent: Apache-HttpClient/4.1.2 (java 1.5)
+2015-10-05 16:20:32,021 DEBUG [org.apache.http.wire] >> "device=4949863060996096&packageName=com.teledom.snosapp&email=afamsimon%40gmail.com&type=1&auth=AIzaSyBT837SlAr-XzPtHzufXNF0Hbfe6ggaFKU&certPassword=m34N9G9d&body=FRONT+DOOR+OPEN&cert=https%3A%2F%2Fcodename-one-push-certificates.s3.amazonaws.com%2Fcom.teledom.snosapp_DevelopmentPushea852471-10ae-421d-b886-3db47be86e7f.p12&production=false"
+2015-10-05 16:20:36,887 DEBUG [org.apache.http.wire] << "HTTP/1.1 200 OK[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Date: Mon, 05 Oct 2015 15:20:37 GMT[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Content-Type: text/html[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Server: Google Frontend[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Content-Length: 0[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Alternate-Protocol: 443:quic,p=1[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "Alt-Svc: quic=":443"; p="1"; ma=604800[\r][\n]"
+2015-10-05 16:20:36,892 DEBUG [org.apache.http.wire] << "[\r][\n]"
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.impl.conn.DefaultClientConnection] Receiving response: HTTP/1.1 200 OK
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << HTTP/1.1 200 OK
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << Date: Mon, 05 Oct 2015 15:20:37 GMT
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << Content-Type: text/html
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << Server: Google Frontend
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << Content-Length: 0
+2015-10-05 16:20:36,894 DEBUG [org.apache.http.headers] << Alternate-Protocol: 443:quic,p=1
+2015-10-05 16:20:36,895 DEBUG [org.apache.http.headers] << Alt-Svc: quic=":443"; p="1"; ma=604800
+2015-10-05 16:20:36,902 DEBUG [org.apache.http.impl.client.DefaultHttpClient] Connection can be kept alive indefinitely
+2015-10-05 16:20:36,936 DEBUG [org.apache.http.impl.conn.SingleClientConnManager] Releasing connection org.apache.http.impl.conn.SingleClientConnManager$ConnAdapter@146a317

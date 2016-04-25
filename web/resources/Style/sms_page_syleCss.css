@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#MessageTable {
+	/*background:url('../images/sms_container_bg.png') no-repeat;
+	z-index:100;
+	*/
+margin-left:0px;
+
+  font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+  font-weight:bold;
+  margin-top:25px;
+  color: #008000;
+  height:5px;
+}
+
+#MessageTable tr:hover{
+	background-color:#FFF;
+	color:#00F;
+}
+
+#MessageTable tr {
+  display:table-row; 
+  padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+  height:5px;
+ 
+  }
+ #MessageTable td, th {
+  display:table-cell; 
+ padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+ word-spacing:.2em;
+  white-space: nowrap;
+ padding: 0 4px 0 0; 
+  }
+#MessageTable tr:visited{
+	background-color:#CCC;
+	color:#93F;
+}
+
+#TableSMSContainer{
+	width:650px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+	
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	margin-top: 10px;
+}
+
+#TableSMSContainer table{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+
+
+/* table containing navigation and current month */
+#tcalControls {
+	border-collapse: collapse;
+	border: 0;
+	width: 100%;
+	margin-bottom: 0px;
+}
+#tcalControls td {
+background-color:#fff;
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	width: 16px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#tcalControls th {
+background-color:#fff;
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+
+.Action_tab
+ {
+
+  background-image:url(../images/action2.png);
+  width:140px;
+  background-repeat:no-repeat;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+ }
+ 
+
+/* Firefox Keyframe Animation */
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 8px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+/* Webkit keyframe animation */
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 10px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}

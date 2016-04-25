@@ -1,0 +1,11 @@
+SMAP
+mycaptcha_jsp.java
+JSP
+*S JSP
+*F
++ 0 mycaptcha.jsp
+mycaptcha.jsp
+*L
+5,51:44
+55,5:95
+*E

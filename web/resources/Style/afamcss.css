@@ -1,0 +1,48 @@
+/* 
+    Document   : afamcss
+    Created on : Jul 29, 2014, 2:21:28 PM
+    Author     : fupre1
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS3/
+*/
+
+root { 
+    display: block;
+}
+#errmsg1:hover{
+    color:red;
+    font-weight:bold;
+
+}
+.login_item1{
+    color:maroon;
+    font-weight:bold;
+    border:dotted;
+    width:auto;
+    text-align:center;
+    height:inherit;
+    background-color:red;
+}
+td#ImgTxt{
+    color:blue;
+    font-weight:bold;
+    border:ridge;
+    width:auto;
+    text-align:center;
+    height:inherit;
+    background-color:silver
+}
+input[type=text]{
+    width:auto;
+    border-radius:rounded-corner;
+    height:auto;
+    opacity:70;
+    text-overflow:t9;
+    text-align:justify;
+    border:dashed;
+}

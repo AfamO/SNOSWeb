@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>My Jquery Exercises Document</title>
+<script  src="resources/jquery-1.9.1.js"></script>
+<script  src="resources/MyJquery.js"></script>
+
+</head>
+<center><div id="divTestArea3" style="width: 250px; height: 200px; display: none; background-color: #89BC38;">
+    <h1>WELCOME TO MY SITE!<BR>HOW ARE YOU TODAY?</h1>
+</div></center>
+<div id="divTestArea44" style="width: 50px; height: 50px; display: none; background-color: #89BC38;"></div><br />
+<a href="javascript:void(0);" onclick="SlideToggleBox();">Slide Toggle box</a>
+
+<div style="height: 60px;">
+        <div id="divTestBox1" style="height: 50px; width: 50px; background-color: #89BC38; position: absolute;"><b>I am here now</b></div>
+        <div id="divTestBox2" style="height: 50px; width: 50px; background-color: #89BC38; position: absolute;"><b>I have moved right here.</b></div>
+</div>
+
+<div style="height: 40px;">
+        <div id="divTestBox3" style="height: 20px; width: 20px; background-color: #89BC38; position: absolute;"></div>
+</div>
+<div style="height: 60px;">
+        <div id="divTestBox4" style="height: 80px; width: 80px; background-color: #89BC38; position: absolute;">
+            <big>Hey I am big<br> and no 4 div </big>
+        </div>
+</div><br><br><br><br><br><br>
+<a href="javascript:void(0);" onclick="$('#divTestArea1').slideDown(5000);">Show box</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea1').stop();">Stop</a><br> For Queued Animations<br>
+<a href="javascript:void(0);" onclick="$('#divTestArea2').slideDown(5000).slideUp(5000).slideDown(5000);">Show box</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea2').stop();">Stop</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea2').stop(true);">Stop all</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea2').clearQueue().hide()">Reset</a>
+<div id="divTestArea2" style="padding: 100px; background-color: #89BC38; text-align: center; display: none;">
+
+        <b>Hello, world!</b>
+</div><br>
+<a href="javascript:void(0);" onclick="$('#divTestArea33').slideDown(5000);">Show box</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea33').stop(true);">Stop</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea33').stop(true, true);">Stop but finish</a>
+<a href="javascript:void(0);" onclick="$('#divTestArea33').clearQueue().hide();">Reset</a>
+
+<div id="divTestArea33" style="padding: 100px; background-color: #89BC38; text-align: center; display: none;">
+        <b>Hello, world!</b>
+</div>
+
+<div id="divTestArea1" style="padding: 100px; background-color: #89BC38; text-align: center; display: none;">
+        <b>Hello, world!</b>
+</div>
+
+
+
+
+
+<div id="divTest"></div>
+<div id="divTest1"></div>
+<div id="divTest2"></div>
+<div id="divTest3"></div>
+<div id="abcd"></div>
+<div id="abccd"></div>
+<div id="abcd"></div>
+<div id="abd"></div>
+<ul>
+        <li class="bold">Test 1</li>
+        <li>Test 2</li>
+        <li class="bold">Test 3</li>
+</ul>
+<span title="Title 1">Test 1</span><br />
+<span>Test 2</span><br />
+<span title="Title 3">Test 3</span><br />
+<a href="http://www.google.com" target="_blank">Link 1</a><br />
+<a href="http://www.google.com" target="_self">Link 2</a><br />
+<a href="http://www.google.com" target="_blank">Link 3</a><br />
+
+<div id="divTestArea1">
+        <b>Bold text</b>
+        <i>Italic text</i>
+        <div id="divTestArea2">
+                <b>Bold text 2</b>
+                <i>Italic text 2</i>
+                <div>
+                        <b>Bold text 3</b>
+                </div>
+        </div>
+</div>
+
+<div id="divTestArea1" style="padding: 50px; background-color: #89BC38; text-align: center; display: none;">
+        <b>Hello, world!</b>
+</div>
+<a href="javascript:void(0);" onclick="ShowBox1();">Show box1</a><br>
+    
+<div id="divTestArea21" style="width: 50px; height: 50px; display: none; background-color: #89BC38;"></div>
+<div id="divTestArea22" style="width: 50px; height: 50px; display: none; background-color: #C3D1DF;"></div>
+<div id="divTestArea23" style="width: 50px; height: 50px; display: none; background-color: #9966FF;"></div>
+<a href="javascript:void(0);" onclick="ShowBoxes();">Show Boxes</a>
+
+<div id="divTestArea4" style="width: 50px; height: 50px; display: none; background-color: #89BC38;"></div><br />
+<a href="javascript:void(0);" onclick="ToggleBox();">Toggle box</a>
+<div id="divTestArea1111" style="padding: 50px; background-color: #89BC38; text-align: center; display: none;">
+        <b>Hello, world!</b>
+</div>
+<a href="javascript:void(0);" onclick="ShowBox1();">Show box(Slide)</a><br>
+
+
+
+
+<script type="text/javascript">
+
+$(function()
+{		
+		$("#divTest").text("Hello World,Welcome to Jquery 1.9.1");
+        $("#divTest1").text("It works here. Doesn't it?");
+        
+		
+});
+$(document).ready(function ()
+{
+    $("#divTest2").text("Hello World,Thank you very much indeed \nThanks");
+});
+$(function()
+{
+    $("#divTest3").text("How do you do?").css("color","blue").removeClass("blue").addClass("bold").css("color", "red");
+}
+
+);
+$(function()
+{
+    $(".bold").css("font-weight", "bold").css("color", "blue");
+    $("div").css("font-weight", "bold");
+    $("li.bold").css("color", "green");
+}
+);
+ $(function()
+ {
+     $("[title]").css("text-decoration", "underline");
+ }
+);
+ $(function()
+ {
+     $("a[target='_blank']").append("[new window]");
+     //$("a[target!='_blank']").append("[same window]<br>");
+     
+ }
+);
+    $("div")
+     .filter(function(){
+       return this.id.match(/abc+d/);
+     })
+     .html("matched");
+
+     $("#divTestArea1 >i").css("color", "blue");
+     function callBack1()
+     {
+         alert("Animation In Progress\nThank you");
+        var ans= prompt("Do you wish to continue?");
+        if(ans=="yes")
+            {
+                $("#divTestArea1").fadeIn("slow", callBack1);
+                
+            }
+        else
+            {
+                    alert("Bye!!!\nAnimation Finished\nThank you");
+            }
+     }
+     function ShowBoxes1()
+{
+   $("#divTestArea1").fadeIn("slow", callBack1);
+    $("divTestArea21").fadeIn("fast");
+    $("divTestArea22").fadeIn("slow");
+    $("divTestArea23").fadeIn(2000,function(){
+    $("divTestArea23").fadeOut(3000);
+    });
+   
+   }
+function ShowBox1()
+{
+    $("#divTestArea1111").slideDown();
+}
+
+ function ToggleBox()
+{
+        $("#divTestArea4").fadeToggle("slow");
+}
+function ShowBoxes()
+{
+    $("divTestArea21").slideDown("fast");
+    $("divTestArea22").slideDown("slow");
+    $("divTestArea23").slideDown(2000);
+
+   }
+
+$(function()
+{
+        $("#divTestArea3").slideDown(4000, function()
+        {
+                $("#divTestArea3").slideUp(3000);
+        });
+});
+function SlideToggleBox()
+{
+  
+        $("#divTestArea44").slideToggle("slow");
+
+
+}
+
+$(function(){
+    $("#divTestBox1").animate({
+        "left":"200px"
+    },5000
+    );
+
+       
+}
+);
+$(function(){
+
+        $("#divTestBox2").
+            animate({
+            "left":"400px"
+        },6000
+    );
+
+}
+);
+
+ $(function()
+{
+        $("#divTestBox3").animate(
+                { "left" : "100px" },
+                1000,
+                function()
+                {
+                        $(this).animate(
+                                { "left" : "20px" },
+                                500,
+                                function()
+                                {
+                                        $(this).animate({ "left" : "50px" }, 500);
+                                }
+                        )
+                }
+        );
+});
+
+
+$(function()
+{
+        $("#divTestBox4").animate({ "left" : "100px" }, 1000);
+        $("#divTestBox4").animate({ "left" : "20px" }, 500);
+        $("#divTestBox4").animate({ "left" : "50px" }, 500);
+});
+
+</script>
+<br>Thank you
+<body>
+</body>
+</html>

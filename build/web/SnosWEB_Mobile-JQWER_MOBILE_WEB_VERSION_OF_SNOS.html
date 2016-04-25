@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+    <title>SNOS Mobile</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+ <link id='camera-css' href="resources/Style/camera.css"  type='text/css' media='all' >
+<!--
+The classes of css below are also used for this Mobile Web application.
+-->
+    <style>
+        .company_name {font-size: 18px;font-weight: normal;text-transform: uppercase;color: #48555a;}
+
+		html,body {
+			height: 20%;
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+
+		.fluid_container {
+			bottom: 0;
+			height: 40%;
+			left: 0;
+			position: relative;
+			right: 0;
+			top: 0;
+			z-index: 0;
+
+		}
+		#camera_wrap_4 {
+
+			bottom: 0;
+			height: 40%;
+			left: 0;
+			margin-bottom: 0!important;
+			position: absolute;
+			right: 0;
+			top: 3;
+		}
+		.camera_bar {
+			z-index: 2;
+		}
+		.camera_thumbs {
+			margin-top: 20px;
+			position: relative;
+			z-index: 1;
+		}
+		.camera_thumbs_cont {
+			border-radius: 0;
+			-moz-border-radius: 0;
+			-webkit-border-radius: 0;
+		}
+
+		.camera_overlayer {
+			opacity: .1;
+		}
+         h1,h2,h3 {
+        color: #36C;
+        font-weight: bold;
+        margin-bottom: 2em;
+        text-transform: uppercase;
+        font:Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    #slogan {
+	position:absolute;
+	margin-left:35%;
+	top:0.5%;
+	color: #1b5989;
+	font-weight: bold;
+	font-size: 10px;
+	line-height: 10px;
+	width: 35%;
+	left: 35%;
+}
+.logo {
+margin-top: 9px;
+margin-right: 10px;
+margin-bottom: 9px;
+margin-left: 24px;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:18px;
+}
+div.dropdown {
+color: #555;
+margin: 3px -22px 0 0;
+width: 50px;
+position: relative;
+height: 47px;
+right: -80%;
+background-image:url(resources/images/navigation.png);
+text-align:right;
+}
+
+div.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135%;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+ border-radius:10px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown  li a {
+
+    color: #555555;
+    display: block;
+    font-family: arial;
+    font-weight: bold;
+    padding: 6px 15px;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.dropdown li a:hover{
+    background:#155FB0;
+    color: #FFFFFF;
+    text-decoration: none;
+
+}
+a.account {
+	font-size: 11px;
+	line-height: 16px;
+	color: #fff;
+	position: absolute;
+	z-index: 110;
+	display: block;
+	padding: 11px 0 0 20px;
+	height: 28px;
+	width: 121px;
+	margin: -11px 0 0 -10px;
+	text-decoration: none;
+	background:url(../images/arrow2.png) 116px 17px no-repeat;
+	cursor:pointer;
+	left: -38px;
+	top: 10px;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
+
+}
+.welcomemsgheader{
+            text-shadow:4px 4px 8px #36C;
+            border: 2px solid #888;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+             border-radius: 16px;
+              -moz-box-shadow: 10px 10px 5px #888;
+            -webkit-box-shadow: 10px 10px 5px #888;
+             box-shadow: 20px 20px 10px #888;
+
+        }
+        #MessageTable {
+	/*
+	background:url(../images/login_form_bg.png) no-repeat;
+	z-index:100;
+	*/
+
+   margin-left:0px;
+   padding-left:10px;
+   padding-top:5px;
+  font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+  font-weight:bold;
+  margin-top:40px;
+  color: #008000;
+
+}
+
+
+#MessageTable tr:hover{
+    /*background-color:#CCC;
+	background-color:silver;*/
+	background-color:#CCCCFF;
+    color:#00F;
+    cursor:pointer;
+}
+
+#MessageTable tr {
+  display:table-row;
+  padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+  height:5px;
+
+  }
+ #MessageTable td, th {
+  display:table-cell;
+  padding-bottom:0;
+  padding-top:0;
+  margin-bottom:0;
+  margin-top:0;
+  word-spacing:.2em;
+  white-space: nowrap;
+  padding: 0 4px 0 0;
+  }
+#MessageTable tr:visited{
+	background-color:#CCC;
+	color:#93F;
+}
+.buttonDisplay{
+  -moz-border-radius: 25px;
+  -webkit-border-radius:25px;
+	border-radius:25px;
+        padding-left:4px;
+        padding-right:4px;
+        padding-top:1px;
+        padding-bottom:1px;
+        color:#FFF;
+        background-color:#009999;
+        cursor:pointer;
+        }
+
+.Action_tab
+ {
+
+  background-image:url(resources/images/action2.png);
+  width:40%;
+  color:#008000;
+  background-repeat:no-repeat;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  -moz-border-radius:25px;
+ -webkit-border-radius:25px;
+  border-radius:25px;
+   cursor:pointer;
+
+ }
+
+ #sms {
+	width:100%;
+        height:auto;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	margin-top: 10px;
+      /*padding-top:30px;
+
+        margin-left:30px;*/
+
+
+
+}
+
+#sms div{
+	width:80%;
+	position:relative;
+	top:0px;
+	left:-2px;
+
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+
+
+	</style>
+
+
+
+    <link href="resources/Style/JQMcss.css"  >
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+    <!--
+The javascript file 'JQMscript.js' contains the MAJOR JAVASCRIPT AND JQUERY MOBILE LOGIC used for this Mobile Web application.
+-->
+        <script src="resources/Script/JQMscript.js" ></script>
+    <script src='resources/Script/jquery.min.js'></script>
+    <script src='resources/Script/jquery.mobile.customized.min.js'></script>
+    <script src="resources/Script/jquery.easing.1.3.js" ></script>
+    <script src="resources/Script/camera.min.js" ></script>
+
+
+    <script>
+  /*
+   * The ones below are also used
+   */
+
+  jQuery(function(){
+// this below code is used for animation of images.
+			jQuery('#camera_wrap_4').camera({
+				height: 'auto',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: false,
+				hover: false,
+				opacityOnGrid: false
+			});
+
+		});
+
+
+  $(function(){
+//call most of the functions declared in JQMscript.js-the main logic of this mobile web application
+CallAllMyFunctions();
+        
+        //This is a timer that refreshes every second to pull up the latest alerts from the
+        //server and that is also used for registration comfirmation purposes.
+        timedRefresh(7000);
+
+});
+/*
+ * Calls most of the functions declared in JQMscript.js-the main logic-and used in this mobile web app
+ */
+function CallAllMyFunctions(){
+//Calls the appropriate initialization method
+Init();
+//calls the Login method when the Login Button of Login Page is clicked
+$('#actionLogin').click(function(){
+   // note 'false' means that it is not refreshing the sms page. I mean this method is being called the first time 
+    ClientLogin(false);
+    return false;
+});
+//Calls this method to carry out the first stage of client registration when 'Next' Button located in 
+// first registration page (jqwery mobile page id=pageregisterclient) is clicked.
+ $('#actionreg1').click(function(){
+    ClientRegistration("form1");
+   return false;
+});
+
+$('#actionreg1').click(function(){
+    ClientRegistration("form1");
+   return false;
+});
+//Calls this method to carry out the 2nd stage of client registration when 'Next' Button located in 
+// 2nd stage registration page(jqwery mobile page id=pageregisterdevice) is clicked.
+$('#actionreg2a').click(function(){
+   ClientRegistration("form2");
+     return false;
+});
+//Calls this method to carry out the 3rd stage of client registration when 'Next' Button located in 
+// 3rd stage registration page(jqwery mobile page id=pageregistercontacts) is clicked.
+$('#actionreg3a').click(function(){
+    ClientRegistration("form3");
+     return false;
+});
+//This method simply refreshes sms page(jqwery mobile page id=pageviewsms) to re-load the sms alerts
+$('#inbox').click(function(){
+
+// 'true' means that this is just a  page refreshing invoacation, I mean that the client has alreay logged in 
+    ClientLogin(true);
+  
+    return false;
+});
+//This method simply calls the NEXT batch of clients device/objects profile data to be dispalyed.
+//This is achieved when  device profile page(jqwery mobile page id=pageDeviceProfile) is navigated into from the right hand side control panel
+$('#actionNextUpdate').click(function(){
+
+     DeviceProfileView("Next");
+
+    return false;
+});
+//This method simply calls the PREVIOUS batch of clients device/objects profile data to be dispalyed.
+//This is achieved when  device profile page(jqwery mobile page id=pageDeviceProfile) is navigated into from the right hand side control panel
+$('#actionPrevUpdate').click(function(){
+
+     DeviceProfileView("Prev");
+    return false;
+});
+
+//This method simply calls the NEXT batch of clients contacts profile data to be dispalyed.
+//This is achieved when  contacts profile page(jqwery mobile page id=pageContactsProfile) is navigated into from the right hand side control panel
+$('#actionNextUpdate2nd').click(function(){
+
+     ContactsProfileView("Next");
+
+    return false;
+});
+//This method simply calls the PREVIOUS batch of clients contacts profile data to be dispalyed.
+//This is achieved when  contacts profile page(jqwery mobile page id=pageContactsProfile) is navigated into from the right hand side control panel
+$('#actionPrevUpdate2nd').click(function(){
+
+     ContactsProfileView("Prev");
+    return false;
+});
+
+//This methods calls the personal Profile page(jqwery mobile page id=pagePersonalProfile) to display the clients personal data before it shows up.
+$("#pagePersonalProfile").bind("pagebeforeshow",function(event,ui){
+// 'true' means display the data ONLY
+ClientProfileView(true);
+
+});
+//This methods calls the device/data Profile page(jqwery mobile page id=pageDeviceProfile) to display the clients personal data before it shows up.
+$("#pageDeviceProfile").bind("pagebeforeshow",function(event,ui){
+// 'true' means display the data ONLY
+DeviceProfileView(true);
+
+});
+//This methods calls the contacts Profile page(jqwery mobile page id=pageContactsProfile) to display the clients personal data before it shows up.
+$("#pageContactsProfile").bind("pagebeforeshow",function(event,ui){
+// 'true' means display the data ONLY
+ContactsProfileView(true);
+
+});
+//This button simply calls the clients profile data to be UPDATED
+//This is achieved when  device profile page(jqwery mobile page id=pagePersonalProfile) is navigated into from the right hand side control panel
+$('#actionreg11a').click(function(){
+    // 'false' means update the data
+    ClientProfileView(false);
+    return false;
+});
+//This button simply calls the clients device/object profile data to be UPDATED
+//This is achieved when object/device profile page(jqwery mobile page id=pageDeviceProfile) is navigated into from the right hand side control panel
+$('#actionreg22').click(function(){
+    //'false' means update the data
+     DeviceProfileView(false);
+   return false;
+});
+//This button simply calls the clients contacts profile data to be UPDATED
+//This is achieved when  contacts profile page(jqwery mobile page id=pageContactsProfile) is navigated into from the right hand side control panel
+$('#actionreg33').click(function(){
+    //'false' means update the data.
+     ContactsProfileView(false);
+   return false;
+});
+//This button simply calls the clients password data to be RESET
+//This is achieved when  the password chang page(jqwery mobile page id=pageChangePass) is navigated into from the right hand side control panel
+$('#submitChangePass').click(function(){
+   ChangePass();
+   return false;
+});
+//This button simply calls the client sms imbox at the server to be SEARCHED
+//This is achieved when  the sms page(jqwery mobile page id=pageviewsms) is navigated into from the right hand side control panel
+$('#SMSSearchButton').click(function(){
+  SearchSMSInbox();
+   return false;
+});
+/*
+ * The below logout,logout1, logout2,logout3,etc contain
+ * different div elements in the control  panels List elements that is responsible for logging a client out
+ */
+$('#logout').click(function(){
+    LogOff();
+     return false;
+});
+$('#logout1').click(function(){
+    LogOff();
+     return false;
+});$('#logout2').click(function(){
+    LogOff();
+     return false;
+});$('#logout3').click(function(){
+    LogOff();
+     return false;
+});$('#logout4').click(function(){
+    LogOff();
+     return false;
+});
+$('#logout5').click(function(){
+    LogOff();
+     return false;
+});
+}
+
+   
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+<section id="pagehome"  data-role="page" data-theme="a" >
+    <header data-role="header" data-position="standard" >
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+    <nav data-role="navbar" data-theme="d" style="margin-top:12%;">
+
+  <ul>
+<li><a  href="#pagehome" class="ui-btn-active">Home</a></li>
+<li><a href="#pageservices">Services</a></li>
+<li><a href="#pageAboutSnos">About SNOS</a></li>
+<li><a href="#pagecontactus">Contact Us</a></li>
+<li><a href="#pagetechnicalsupport">Technical Support</a></li>
+<li><a href="#pagesnosblog">SNOS Blog</a></li>
+</ul>
+</nav>
+<br><br>
+<div class="fluid_container">
+        <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
+            <div  data-src="resources/slideimage/banner1.png">
+            </div>
+            <div  data-src="resources/slideimage/snoc2.png">
+            </div>
+            <div  data-src="resources/slideimage/banner3.png">
+            </div>
+            <div  data-src="resources/slideimage/banner4.png">
+            </div>
+
+        </div><!-- #camera_wrap_3 -->
+
+    </div><!-- .fluid_container -->
+
+ <br><br><br>
+
+</header>
+
+
+<div class="content" data-role="content" >
+<ul data-role="listview" data-inset="true" data-filter="true">
+<li><a href="#pageLogins" data-transition="flip"><img src="resources/images/sign4.gif" height="30">Login</a></li>
+<li><a href="#" data-transition="pop">Not yet a Client?</a></li>
+<li><br><a href="#pageregisterclient" data-transition="pop"><img  src="resources/images/regsnos.png"   width="100" >Register</a></li>
+
+
+</ul>
+
+
+
+<div data-role="table" cellpadding="0" cellspacing="0" align="center" width="800" >
+
+<tr><td><h1 class="welcomemsgheader">Welcome to The Home Of First IT Security Company In Nigeria!</h1></td></tr>
+
+
+          <p >Security Network Operation System (SNOS)  is a security solution that uses state of the art facility to produce a system that can guaranty effective security and  monitoring of humans and properties .
+The Security Network Operating System gives one continues monitoring of one's interest even when the person is out of town.
+ </p>
+
+
+           <p>OUR VISION</p>
+                <p>To Secure every <cite>socio-economic</cite> process using Hi-tech Information and Communications Technology (ICT) infrastructure and software facilities with appropriate content solutions to boost national economic productivity and prosperity. </p>
+                <p>&nbsp;</p>
+            <p>OUR MISSION</p>
+                <p>To  Detect and Monitor .</p>
+                <p>To Report . </p>
+               <p>To Prompt Action Taking . </p>
+                <p> </p>
+
+		  </div>
+
+
+
+</div> <!-- Begin:Content ends here -->
+
+<div data-role="footer" data-position="standard">
+    <div data-role="footer" data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#pagehome">Home</a></li>
+<li><a href="#pageservices">Products</a></li>
+<li><a href="#pagecontactus" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+    <center>&copy; 2014 Teledominternational Ltd</center></div>
+
+
+</section>
+
+
+<!-- Begin: Login page -->
+<div id="pageLogins" data-role="page">
+<div data-role="header" id="loginheader" data-position="standard">
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+    <h1>Login</h1>
+
+</div>
+<div class="content" data-role="content">
+<div id="Logingmsg" align="center">
+
+</div>
+
+<h3>Login</h3>
+ <form id="LoginForm"  data-transition="pop" >
+<fieldset >
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="user">User Name<span style="color:#FF0000">*</span></label></font>
+<input type="email" size="15" id="user" name="userid"  data-inline="true">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="pass">Password<span style="color:#FF0000">*</span></label></font>
+<input type="password" size="5" id="pass" name="password"  data-inline="true">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="slider">Number of Security Status to display:</label></font>
+<input type="range" id="slider" name="slider" min="5" max="50" value="10">
+</div>
+<h3 id="notification"></h3>
+<div data-role="fieldcontain" align="center">
+<button type="submitt" data-theme="b" name="action"  value="Login" id="actionLogin" data-icon="home" data-inline="true">Login</button>
+<input type="reset" value="Reset" name="can" data-inline="true" data-iconpos="left" data-icon="refresh">
+</div>
+
+</fieldset>
+ </form>
+</div>
+<div data-role="footer">
+<div data-role="footer" data-position="standard" data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1> <i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</div>
+
+
+</div>
+
+
+<div id="pageviewsms" data-role="page">
+<div data-role="header" data-position="standard">
+
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+<h1 align="center">Alerts</h1>
+<div data-role="fieldcontain" align="right">
+    <form  id="SearchForm"  data-transition="pop" >
+    <button  id="SMSSearchButton" type="submitt" data-theme="a" name="action"   data-icon="search" data-inline="true">Search</button> 
+<input onkeyup="" data-inline="true" data-theme="a" data-mini="true" type="search" placeholder="Search for  Seurity Alerts by Message from your Inbox" name="searchtf" data-mini="true" id="searchsms" />
+
+
+</form>
+
+</div>
+<div id="searcherr" align="center">
+
+
+</div>
+
+
+
+</div>
+
+
+
+       <div   class="dropdown" id="myCpanel"   >
+	<a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>Inbox</a></li>
+<li><a href='#pagePersonalProfile'>Personal Profile</a></li>
+<li><a href='#pageDeviceProfile'>Device Profile</a></li>
+<li><a href='#pageContactsProfile'>Contacts Profile</a></li>
+<li><a href='#pageActions'>Actions </a></li>
+<li><a href='#pageChangePass'>Change Password </a></li>
+<li><a href='#pageExit' id='logout' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+
+
+
+
+<div class="content"  data-role="content">
+
+    <div id="ctrlpanel" align="right">
+
+
+</div>
+
+<div id="sms" align="" >
+    <div align="center"> <font face="Times New Roman" size="3" color="blue">
+    We are sorry to inform you that there are no messages found for you.Please do go to the home page<br> and Login to view your security alerts.<br><br>Thank you.</font>
+     </div>
+<ul  data-role="listview" >
+
+
+</ul>
+</div>
+
+
+</div>
+<div data-role="footer" data-position="standard">
+    <div data-role="footer" data-position="standard" data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#pagehome">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+    <h1> SNOS <i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></div>
+</div>
+
+
+<section id="pageConfirmReg" data-role="page">
+<header data-role="header">
+     <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+    <h1>Registration Confirmation</h1></header>
+<div class="content" data-role="content">
+
+<h3>Confirmation of Registration</h3>
+ <div id="errmsg4ab" align="center">
+
+ </div>
+
+</div>
+<footer data-role="footer">
+<div data-role="footer"  data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1> <i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+<section id="pagePersonalProfile" data-role="page">
+<header data-role="header">
+     <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+    <h1>My Profile</h1></header>
+<div   class="dropdown" id="myCpanel1"  >
+	<a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>SMS</a></li>
+<li><a href='#pageDeviceProfile'>Device Profile</a></li>
+<li><a href='#pageContactsProfile'>Contacts Profile</a></li>
+<li><a href='#pageActions'>Actions </a></li>
+<li><a href='#pageChangePass'>Change Password </a></li>
+<li><a href='#pageExit' id='logout1' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+
+<div class="content" data-role="content">
+
+<div data-role="fieldcontain" align="right">
+    <form  id="form0"  data-transition="pop" >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" data-theme="b" data-mini="true" type="search" placeholder="Search in this app" name="search-afamapps" data-mini="true" id="search-afamapps" />
+</form>
+</div>
+
+<form  id="form11"  >
+<div align="center"> <font face="Times New Roman" size="2" color="red">
+     Note that any changes will be reflected immediately you click 'Update Profile'</font>
+     </div>
+     <div align="center" id="errmsg11" font face="Times New Roman" size="3" color="blue">
+
+     </div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="fullname">Full Name<span style="color:#FF0000">*</span></label></font>
+<input type="textinput"  size = "30" name="name" id="fullname" placeholder="Full Name">
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="gsm" >Mobile Number<span style="color:#FF0000">*</span></label></font>
+<input type="tel" disabled="true" name="gsm" data-inline="true" id="gsm" size = "30" placeholder="Mobile Number" >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="email1">E-mail<span style="color:#FF0000">*</span></label></font>
+<input type="email" data-inline="true" size = "30"  name = "email1" id="email1" placeholder="E-mail"  maxlength="50"  >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="add">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="add" name="address" style="margin-right:30px;"></textarea>
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "1" color="blue"><label for="mystate">State<span style="color:#FF0000">*</span></label></font>
+<input type="text" size = "20" id="mystate" name = "state" maxlength="50" >
+
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="lg">LGA<span style="color:#FF0000">*</span></label></font>
+<input type="text" size = "30" id="lg"  name = "lga" maxlength="50" style="margin-right:30px;">
+
+</div>
+<div id="notification">
+
+</div>
+
+<h3 id="buttongrp"></h3>
+<div data-role="fieldcontain" align="center">
+<input type="submit" data-theme="b" value="Update Profile"   name="action" id="actionreg11a" data-inline="true" data-icon="next">
+<input type="reset" data-theme="e" value="Reset" name="can" data-inline="true" data-iconpos="right" data-icon="refresh">
+    <input type="hidden" value="reg1" name="id">
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+</div>
+<footer data-role="footer">
+<div data-role="footer"  data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1> <i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+<section id="pageDeviceProfile" data-role="page">
+<header data-role="header">
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+    <h1>Device Profile</h1></header>
+<div   class="dropdown" id="myCpanel2"  >
+<a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>SMS</a></li>
+<li><a href='#pagePersonalProfile'>Personal Profile</a></li>
+<li><a href='#pageContactsProfile'>Contacts Profile</a></li>
+<li><a href='#pageActions'>Actions </a></li>
+<li><a href='#pageChangePass'>Change Password </a></li>
+<li><a href='#pageExit' id='logout2' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+<div class="content" data-role="content">
+
+
+<div data-role="fieldcontain" align="right">
+    <form  id="myform" data-transition="pop" >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" type="search" name="search-afam-app" id="search-afamapps" />
+</form>
+</div>
+<form  id="form22" data-transition="pop" >
+
+
+    <div align="center"> <font face="Times New Roman" size="2" color="red">
+    Note that any change(s) will be reflected immediately you click 'Update Profile'</font>
+     </div>
+    <div align="center" id="DeviceRowNumber">
+     </div>
+
+       <div align="center" id="errmsg22" ><font font face="Times New Roman" size="3" color="blue"></font>
+
+     </div>
+
+<div data-role="fieldcontain">
+  <font face= "Times New Roman" size = "3" color="blue"><label for="dname">Name<span style="color:#FF0000">*</span></label></font>
+    <input type="textinput" size = "30" name="nam" id="dname" placeholder="Device Name">
+</div>
+
+   <div data-role="fieldcontain">
+       <font face= "Times New Roman" size = "3" color="blue"><label for="dhouse_type">Housing Type<span style="color:#FF0000">*</span></label></font>
+<input type="textinput" size = "30" name = "house_type" id="dhouse_type" maxlength="50" placeholder="Type of Structure housing your equipment" >
+   </div>
+
+
+<div data-role="fieldcontain">
+    <font face= "Times New Roman" size = "3" color="blue"><label for="desc">Description<span style="color:#FF0000">*</span></label></font>
+<textarea cols="20"  rows="4" name="description" id="desc"  placeholder="Describe your Device"> </textarea>
+</div>
+<div data-role="fieldcontain">
+
+   <font face= "Times New Roman" size = "3" color="blue"><label for=localObj">Location(in the house)<span style="color:#FF0000">*</span></label></font>
+   <textarea cols="20"  rows="4" name="Location" id="localObj" placeholder="Where can your device be found in your house?"> </textarea>
+
+</div>
+
+
+<div data-role="fieldcontain">
+
+    <font face= "Times New Roman" size = "3" color="blue"><label for="addre">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="addre" name="address" style="margin-right:30px;"></textarea>
+</div>
+
+
+
+
+    <div data-role="fieldcontain">
+
+<font face= "Times New Roman" size = "3" color="blue"><label for="mystate2">State<span style="color:#FF0000">*</span></label></font>
+<input type="text" size = "20" id="mystate2" name = "state" maxlength="50" >
+
+</div>
+<div data-role="fieldcontain">
+
+
+<font face= "Times New Roman" size = "3" color="blue"><label for="mylg2">LGA<span style="color:#FF0000">*</span></label></font>
+
+
+<input type="text" size = "30" id="mylg2" name = "lga" maxlength="50" >
+
+</div>
+
+
+
+
+<div data-role="fieldcontain" id="myUpdateButtons"  >
+
+<button type='submitt' value='<< Previous'    name='action' id='actionPrevUpdate' data-inline='true' data-icon='previous'><< Previous</button>
+<input type="submit" value="Update Device"    name="action" id="actionreg22" data-inline="true" data-icon="submit">
+<input type="reset" value="Reset" name="can" data-inline="true" data-iconpos="left" data-icon="refresh">
+<button type="submit" value="Next >>"   name="action" id="actionNextUpdate" data-inline="true" data-icon="next">Next >></button>
+<input type="hidden" value="reg22" name="id">
+</div>
+
+ </form>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<footer data-role="footer">
+<div data-role="footer"  data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1><i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+<section id="pageContactsProfile" data-role="page">
+<header data-role="header">
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+    <h1>Contacts Profile</h1>
+
+</header>
+<div   class="dropdown" id="myCpanel3"  >
+  <a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>SMS</a></li>
+<li><a href='#pagePersonalProfile'>Personal Profile</a></li>
+<li><a href='#pageDeviceProfile'>Device Profile</a></li>
+<li><a href='#pageActions'>Actions </a></li>
+<li><a href='#pageChangePass'>Change Password </a></li>
+<li><a href='#pageExit' id='logout3' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+<div class="content" data-role="content">
+
+<div data-role="fieldcontain" align="right">
+    <form  id="myform"  >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" type="search" name="search-afam-app" id="search-afamapps" />
+</form>
+</div>
+<form  id="form33" data-transition="pop" >
+<div align="center" data-role="fieldcontain"><font face="Times New Roman" size="2" color="red">
+     Note that the fields that are marked with * are compulsory</font>
+     </div>
+
+ <div align="center" id="ContactRowNumber">
+     </div>
+     <div align="center" id="errmsg33">
+
+     </div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="nam">Name<span style="color:#FF0000">*</span></label></font>
+    <input type="text" size = "30" name="nam" id="nam" placeholder="Contact's Name">
+</div>
+
+
+<div data-role="fieldcontain">
+   <font face= "Times New Roman" size = "3" color="blue"><label for="relation_pos">Relationship/Position<span style="color:#FF0000">*</span></label></font>
+   <input type="text" name="relation_pos" id="relation_pos" size = "30"  placeholder="Who is this fellow to you?">
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue" ><label for="gsm1" >Mobile Number<span style="color:#FF0000">*</span></label></font>
+<input  type =number  name="fone" id="gsm1"  size = "30" placeholder="Mobile Number" >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="add1">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="add1" name="address" ></textarea>
+</div>
+<div data-role="fieldcontain">
+    <font face= "Times New Roman" size = "3" color="blue"><label for="email11">E-mail<span style="color:#FF0000">*</span></label></font>
+<input type="email"  size = "30"   name = "email1" id="email11" placeholder="E-mail"  maxlength="50" style="margin-right:30px;" >
+</div>
+
+
+<div data-role="fieldcontain" id="myUpdateButtons2nd" >
+<input type="submit" value="<< Previous"   name="action" id="actionPrevUpdate2nd" data-inline="true" data-icon="previous">
+<input type="submit" value="Update Contact"   name="action" id="actionreg33" data-inline="true" data-icon="home">
+<input type="reset" value="Reset" name="can" data-inline="true" data-iconpos="left" data-icon="refresh">
+<input type="submit" value="Next >>"   name="action" id="actionNextUpdate2nd" data-inline="true" data-icon="next">
+<input type="hidden" value="reg33" name="id">
+</div>
+ </form>
+
+</div>
+<footer data-role="footer">
+<div data-role="footer"  data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1><i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+<section id="pageActions" data-role="page">
+<header data-role="header">
+  <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+    <h1>Actions</h1></header>
+<div   class="dropdown" id="myCpanel4"  >
+  <a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>SMS</a></li>
+<li><a href='#pagePersonalProfile'>Personal Profile</a></li>
+<li><a href='#pageDeviceProfile'>Device Profile</a></li>
+<li><a href='#pageContactsProfile'>Contacts Profile </a></li>
+<li><a href='#pageChangePass'>Change Password </a></li>
+<li><a href='#pageExit' id='logout4' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+<div class="content" data-role="content">
+
+<h3>My Actions </h3>
+
+
+
+</div>
+<footer data-role="footer">
+<div data-role="footer"  data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1> <i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+
+<section id="pageChangePass" data-role="page">
+<header data-role="header">
+   <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+    <h1>Change Password</h1></header>
+<div   class="dropdown" id="myCpanel5"  >
+  <a class="account" ></a>
+	<div class='submenu' style='display: none; ' align='right'>
+
+	  <ul class='root' >
+<li><a href='#pageviewsms' id='inbox'>SMS</a></li>
+<li><a href='#pagePersonalProfile'>Personal Profile</a></li>
+<li><a href='#pageDeviceProfile'>Device Profile</a></li>
+<li><a href='#pageContactsProfile'>Contacts Profile </a></li>
+<li><a href='#pageActions'>Actions </a></li>
+<li><a href='#pageExit' id='logout5' >Sign Out</a></li>
+	  </ul>
+	</div>
+
+	</div>&nbsp;&nbsp;&nbsp;
+<div class="content" data-role="content">
+
+<div id="changePassmsg" align="center">
+</div>
+ <form id="ChangePassForm"  data-transition="pop" >
+<fieldset >
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="opass">Old Password:</label></font>
+<input type="password" size="5" id="opass" name="opass"  data-inline="true">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="npass">New Password:</label></font>
+<input type="password" size="15" id="npass" name="npass"  data-inline="true">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="vnpass">Verify New Password:</label></font>
+<input type="password" size="15" id="vnpass" name="vnpass"  data-inline="true">
+</div>
+
+<div data-role="fieldcontain">
+<input type="submit" data-theme="b" name="action" value="Change My Password" id="submitChangePass" data-icon="pass" data-inline="true">
+    <input type="reset" data-theme="b" value="Clear" id="clear" data-icon="delete" data-inline="true">
+        <input type="hidden" name="id" value="change_pass">
+             <input type="hidden" name="source" value="mobile">
+</div>
+
+</fieldset>
+ </form>
+</div>
+<footer data-role="footer">
+<div data-role="footer" data-position="fixed" data-id="nav">
+<div data-role="navbar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact" class="ui-btn-active ui-statepersist">
+Contact Us</a></li>
+</ul>
+</div>
+</div>
+<h1><i>SNOS Mobile</i><center>&copy; 2014 Teledominternational Ltd</center></h1>
+</footer>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- End: Preferences page -->
+<!-- Begin: Tweet detail view -->
+<section id="pageregisterclient" data-role="page">
+<header data-role="header">
+  <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+    <h1>Client Registration</h1></header>
+
+<div class="content" data-role="content">
+
+<div data-role="fieldcontain" align="right">
+    <form  id="form0"  data-transition="pop" >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" data-theme="b" data-mini="true" type="search" placeholder="Search in this app" name="search-afamapps" data-mini="true" id="search-afamapps" />
+</form>
+</div>
+<fieldset >
+<form  id="form1"  >
+    <div id="errmsgss1" align="center">
+    </div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="Sname">SurName<span style="color:#FF0000">*</span></label></font>
+<input type="textinput"  size = "30" name="Sname" id="Sname" placeholder="Surname">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="Oname">Other Name(s)<span style="color:#FF0000">*</span></label></font>
+<input type="textinput"  size = "30" name="Oname" id="Oname" placeholder="Other Name(s)">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="gsm" >Mobile Number<span style="color:#FF0000">*</span></label></font>
+<input type="number" name="gsm" data-inline="true" id="gsm" size = "30" placeholder="Mobile Number" >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="email0">E-mail<span style="color:#FF0000">*</span></label></font>
+<input type="email" data-inline="true" size = "30" onchange="checkEmailBeforeRegistrationAddress(this.value)"  name = "email1" id="email0" placeholder="E-mail"  maxlength="50"  >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="add">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="add" name="address" style="margin-right:30px;"></textarea>
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="area">Area</label></font>
+<textarea cols="20" rows="4" placeholder="Your Area" id="area" name="area" style="margin-right:30px;"> </textarea>
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "1" color="blue"><label for="mystatea">State<span style="color:#FF0000">*</span></label></font>
+<select id="mystatea" name="state"  size="1" onchange="getLGALists(this.value,'mylg111a');" onblur="getLGALists(this.value,'mylg111a');"    >
+    <option>Select your State </option>
+<option value="Abia State">Abia</option>
+<option value="Akwa Ibom State">Akwa Ibom</option>
+<option value="Anambra State">Anambra</option>
+<option value="Adamawa state">Adamawa</option>
+<option value="Bauchi state">Bauchi</option>
+<option value="Bayelsa state">Bayelsa</option>
+<option value="Benue state">Benue</option>
+<option value="Borno state">Borno</option>
+<option value="Cross River state">Cross River</option>
+<option value="Delta State">Delta</option>
+<option value="Ebonyi state">Ebonyi</option>
+<option value="Edo state">Edo</option>
+<option value="Ekiti state">Ekiti</option>
+<option value="Enugu State">Enugu</option>
+<option value="Gombe state">Gombe</option>
+<option value="Imo State">Imo</option>
+<option value="Jigawa state">Jigawa</option>
+<option value="Kaduna state">Kaduna</option>
+<option value="Kano state">Kano</option>
+<option value="Katsina state">Katsina</option>
+<option value="Kebbi state">Kebbi</option>
+<option value="Kogi state">Kogi</option>
+<option value="Kwara state">Kwara</option>
+<option value="Lagos State">Lagos</option>
+<option value="Nasarawa state">Nasarawa</option>
+<option value="Niger state">Niger</option>
+<option value="Ogun State">Ogun</option>
+<option value="Ondo state">Ondo</option>
+<option value="Osun state">Osun</option>
+<option value="Oyo state">Oyo</option>
+<option value="Plateau state">Plateau</option>
+<option value="Rivers state">Rivers</option>
+<option value="Sokoto state">Sokoto</option>
+<option value="Taraba state">Taraba</option>
+<option value="Zamfara state">Zamfara</option>
+<option value="FCT">FCT</option>
+
+</select>
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="mylg111a">LGA<span style="color:#FF0000">*</span></label></font>
+
+   <div id="lgDiv" align="center">
+        <select id="mylg111a" name="lga"  onchange="getMyLGValue(this.value);"></select>
+   </div>
+
+
+<input  id="mylgaa" type="textinput" size = "20" placeholder="Enter you LGA here" name = "lgaa"  maxlength="50" >
+</div>
+
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="mpass">Password<span style="color:#FF0000">*</span></label></font>
+<input type="password" name="pass" placeholder="Type your Password" id="mpass" size = "30">
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="dvpass">Verify Password<span style="color:#FF0000">*</span></label></font>
+<input type="password" name="vpass" placeholder="Re-type your Password" id="dvpass" size = "30">
+</div>
+<h3 id="buttongrp"></h3>
+<div data-role="fieldcontain" align="center">
+<input type="submit" data-theme="b" value="Next >>"   name="action" id="actionreg1" data-inline="true" data-icon="next">
+<input type="reset" data-theme="e" value="Reset" name="can" data-inline="true" data-iconpos="right" data-icon="refresh">
+    <input type="hidden" value="reg1" name="id">
+</div>
+
+</form>
+ </fieldset>
+</div>
+<footer data-role="footer"><h1>SNOS <i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+
+
+
+
+<section id="pageregisterdevice" data-role="page">
+
+<header data-role="header">
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+    <h1>Device(s) Registration</h1></header>
+<div class="content" data-role="content">
+
+<div data-role="fieldcontain" align="right">
+    <form  id="myform" data-transition="pop" >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" type="search" name="search-afam-app" id="search-afamapps" />
+</form>
+</div>
+<form  id="form2" data-transition="pop" >
+
+
+    <div align="center"> <font face="Times New Roman" size="2" color="red">
+     Note that the fields that are marked with * are compulsory</font>
+     </div>
+    <div id="errmsgss2" align="center">
+    </div>
+
+<div data-role="fieldcontain">
+  <font face= "Times New Roman" size = "3" color="blue"><label for="name">Name<span style="color:#FF0000">*</span></label></font>
+    <input type="textinput" size = "30" name="nam" id="name" placeholder="Device Name">
+</div>
+
+   <div data-role="fieldcontain">
+       <font face= "Times New Roman" size = "3" color="blue"><label for="house_type">Housing Type<span style="color:#FF0000">*</span></label></font>
+<input type="textinput" size = "30" name = "house_type" id="house_type" maxlength="50" placeholder="Type of Structure housing your equipment" >
+   </div>
+
+
+<div data-role="fieldcontain">
+    <font face= "Times New Roman" size = "3" color="blue"><label for="desc">Description<span style="color:#FF0000">*</span></label></font>
+<textarea cols="20"  rows="4" name="description" id="desc"  placeholder="Describe your Device"> </textarea>
+</div>
+<div data-role="fieldcontain">
+
+   <font face= "Times New Roman" size = "3" color="blue"><label for=localObj">Location(in the house)<span style="color:#FF0000">*</span></label></font>
+   <textarea cols="20"  rows="4" name="Location" id="localObj" placeholder="Where can your device be found in your house?"> </textarea>
+
+</div>
+
+
+<div data-role="fieldcontain">
+
+    <font face= "Times New Roman" size = "3" color="blue"><label for="addre">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="addre" name="address" style="margin-right:30px;"></textarea>
+</div>
+
+<div data-role="fieldcontain">
+    <font face= "Times New Roman" size = "3" color="blue"><label for="are">Area</label></font>
+<textarea cols="20" rows="4" placeholder="Your Area" id="are" name="area" style="margin-right:30px;"></textarea>
+</div>
+
+
+    <div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="state">State<span style="color:#FF0000">*</span></label></font>
+<select name="state"  size="1" id="state" onblur="getLGALists(this.value,'mylg111a2');" onchange="getLGALists(this.value,'mylgaaa');"  >
+<option>Select your State </option>
+<option value="Abia State">Abia</option>
+<option value="Akwa Ibom State">Akwa Ibom</option>
+<option value="Anambra State">Anambra</option>
+<option value="Adamawa state">Adamawa</option>
+<option value="Bauchi state">Bauchi</option>
+<option value="Bayelsa state">Bayelsa</option>
+<option value="Benue state">Benue</option>
+<option value="Borno state">Borno</option>
+<option value="Cross River state">Cross River</option>
+<option value="Delta State">Delta</option>
+<option value="Ebonyi state">Ebonyi</option>
+<option value="Edo state">Edo</option>
+<option value="Ekiti state">Ekiti</option>
+<option value="Enugu State">Enugu</option>
+<option value="Gombe state">Gombe</option>
+<option value="Imo State">Imo</option>
+<option value="Jigawa state">Jigawa</option>
+<option value="Kaduna state">Kaduna</option>
+<option value="Kano state">Kano</option>
+<option value="Katsina state">Katsina</option>
+<option value="Kebbi state">Kebbi</option>
+<option value="Kogi state">Kogi</option>
+<option value="Kwara state">Kwara</option>
+<option value="Lagos State">Lagos</option>
+<option value="Nasarawa state">Nasarawa</option>
+<option value="Niger state">Niger</option>
+<option value="Ogun State">Ogun</option>
+<option value="Ondo state">Ondo</option>
+<option value="Osun state">Osun</option>
+<option value="Oyo state">Oyo</option>
+<option value="Plateau state">Plateau</option>
+<option value="Rivers state">Rivers</option>
+<option value="Sokoto state">Sokoto</option>
+<option value="Taraba state">Taraba</option>
+<option value="Zamfara state">Zamfara</option>
+<option value="FCT">FCT</option>
+
+</select>
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="mylgaaa">LGA<span style="color:#FF0000">*</span></label></font>
+
+   <div id="lgDiv2" align="center">
+        <select id="mylg111a2" name="lga"  onchange="getMyLGValue(this.value);"></select>
+   </div>
+
+
+<input  id="mylgaaa" type="textinput" size = "20" placeholder="Enter you LGA here" name = "lgaa"  maxlength="50"  >
+</div>
+
+
+
+
+<div data-role="fieldcontain">
+
+<font face="Times New Roman" size="2" color="red">
+     Do you wish to Register additional Equipment/Device/Sensor?:<span style="color:#FF0000">*</span></font>
+&nbsp;&nbsp;&nbsp;<select name="extra_sensor" id="extra_sensor" data-role="slider" data-inline="true" >
+<option value="no">No</option>
+<option value="yes">Yes</option>
+
+</select>
+</div>
+
+
+<div data-role="fieldcontain" align="center">
+
+<input type="submit" value="Next >>"   name="action" id="actionreg2a" data-inline="true" data-icon="next">
+<input type="reset" value="Reset" name="can" data-inline="true" data-iconpos="left" data-icon="refresh">
+<input type="hidden" value="reg2" name="id">
+</div>
+
+
+
+
+ </form>
+</div>
+<footer data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="pageregistercontacts" data-role="page">
+<header data-role="header">
+
+  <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+    <h1>Contacts Registration</h1></header>
+
+<div class="content" data-role="content">
+
+<div data-role="fieldcontain" align="right">
+    <form  id="myform"  >
+<label for="search-afamapps">Search </label>
+<input data-inline="true" type="search" name="search-afam-app" id="search-afamapps" />
+</form>
+</div>
+<form  id="form3" data-transition="pop" >
+
+
+
+      <div align="center" data-role="fieldcontain"><font face="Times New Roman" size="2" color="red">
+     Note that the fields that are marked with * are compulsory</font>
+     </div>
+
+
+     <div id="errmsgss3" align="center">
+    </div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="nam">Name<span style="color:#FF0000">*</span></label></font>
+    <input type="text" size = "30" name="nam" id="nam" placeholder="Contact's Name">
+</div>
+
+
+<div data-role="fieldcontain">
+   <font face= "Times New Roman" size = "3" color="blue"><label for="relation_pos">Relationship/Position<span style="color:#FF0000">*</span></label></font>
+   <input type="text" name="relation_pos" id="relation_pos" size = "30"  placeholder="Who is this fellow to you?">
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="gsm" >Mobile Number<span style="color:#FF0000">*</span></label></font>
+<input  type =number name="fone" id="gsm" size = "30" placeholder="Mobile Number" >
+</div>
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="add">Address<span style="color:#FF0000">*</span></label></font>
+<textarea  placeholder="Your Address" cols="20" rows="4"  id="add" name="address" ></textarea>
+</div>
+<div data-role="fieldcontain">
+    <font face= "Times New Roman" size = "3" color="blue"><label for="email1">E-mail<span style="color:#FF0000">*</span></label></font>
+<input type="email" size = "30"  name = "email1" id="email1" placeholder="E-mail"  maxlength="50" style="margin-right:30px;" >
+</div>
+
+<div data-role="fieldcontain">
+    <font face='Times New Roman' size='2' color='red'>Do you wish to Register additional contacts-It is highly recommended that you do?:<span style='color:#FF0000'>*</span></font>
+&nbsp;&nbsp;&nbsp;<select name="extra_contact" id="slider-music" data-role="slider" data-inline="true" >
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+<div data-role="fieldcontain" align="center">
+<input type="submit" VALUE="Submitt"  name="action" id="actionreg3a" data-inline="true" data-icon="home">
+<input type="reset" value="Reset" name="can" data-inline="true" data-iconpos="left" data-icon="refresh">
+<input type="hidden" value="reg3" name="id">
+</div>
+ </form>
+</div>
+<footer data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- End: Tweet detail view -->
+<!-- Begin: Error page -->
+<section id="pageError" data-role="page" data-theme="e">
+<header data-role="header"><h1>SNOS Mobile</h1></header>
+<div class="content" data-role="content">
+</div>
+<footer data-role="footer"><h1>SNOS<i>Mobile</i></h1></footer>
+</section>
+<a href="#pageError"
+id="show-error-page"
+data-role="button"
+data-rel="dialog"
+data-transition="pop"
+style="display: none">Show error page</a>
+<!-- End: Error page -->
+<section id="pageAboutSnos" data-role="page" data-theme="e">
+<header data-role="header">
+ <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+    <h1>About SNOS</h1></header>
+<div class="content" data-role="content">
+
+
+<div data-role="table" cellpadding="0" cellspacing="0" align="center" width="100%" >
+
+
+
+	 <p>
+	 &nbsp;&nbsp;SNOS...... a real-time monitoring and surveillance, with SMS and e-mail alerts, of your treasures wherever they may be located from wherever you are in Nigeria and in the world, whenever you want..
+....you may need a second or third person or your security company or guard or the nearest Police post/station/patrol team or whoever you designate to also receive the alerts for rapid response intervention.. These designated persons must necessarily be physically close to your Location of Treasure (LoT) for the purpose of rapid response intervention.
+....your LoT may be your home where you live or your country/village home where you visit infrequently or office or factory or bank or warehouse or event centre/place or project/construction site or plot of land or restaurant or shop. It can be your Church or Mosque compound. Your Object of Treasure (OoT) can be your car or truck or yacht or ship or aircraft.
+In your home or office building, your Point of Treasure (PoT) may be your cash/gold/diamond/certificates/landed property document vault or a particular room or garage or main gate or parking lot or  sitting room or kitchen or corridor or veranda or balcony or lobby or particular doors or windows or cupboards or lockers or drawers or
+shelves or   any of the 4 segments of your home/ building perimeter fence,
+etc....You can designate wherever you want as your point of treasure!
+..."had I known" or "had we known" is always too late and it has cost implications: the cost may be financial or material or tragic loss of human life or lives.<br>
+<i>....if you think providing security is too expensive, please try insecurity.....</i>
+ </p>
+   <h2>Security Network Operation Centre (SNOC)</h2>
+	<p>
+	 &nbsp;&nbsp;The Security Network Operation Centre (SNOC) is the nerve centre of the network of transmitted outputs of  GSM and CDMA SIM card-enabled SNOS CPEs modules that are installed in subscriber premises (homes, offices, warehouses, banks, churches, mosques, factories, cars, trucks, schools, colleges, polytechnics, universities, etc, ). The national seamless telecom network (GSM/CDMA/IP) provides transport between the SIM card-enabled SNOS CPEs and SNOC.
+     A SNOC, equipped with comprehensive data centre facilities, broadband Internet connectivity and GSM interface links receives SNOS CPE outputs and translates same to the web space for automatic online updating of SNOS subscriber database and mail accounts.
+Depending on subscribers or group of subscribers, SNOC comes in a hierarchy of Master SNOC, Mini SNOC and Micro SNOC. A Public Master SNOC is a national or global data centre for a large number of SNOS CPE outputs from individual subscribers. A Private Master SNOC on the other hand is National or global data centre of SNOS CPE outputs of big Corporate organizations having a large number and spread of branches with each branch having many SNOS CPEs. This is SNOC in the cloud.
+A Public Mini SNOC is hub to the outputs of a reduced number and spread of SNOS CPEs of members of the public. A Private Mini SNOC manages a reduced number of SNOS CPE outputs for a corporate organization. A Public Micro SNOC and a Private Micro SNOC manage further reduced number and local area outputs of SNOS CPEs for the public and private organizations respectively.
+
+	</p>
+
+
+
+		  </div>
+
+
+</div>
+<footer data-role="footer"><h1> SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+
+<section id="pageservices" data-role="page" data-theme="e">
+<header data-role="header">
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+
+    <h1>SERVICES</h1></header>
+<div class="content" data-role="content">
+
+
+<div data-role="table" cellpadding="0" cellspacing="0" align="center" width="100%" >
+
+
+
+
+                <h2>What does SNOS Offer? </h2>
+	 <p>
+		&nbsp;&nbsp;SNOS senses and monitors wherever and whatever you want. SNOS sends you, by SMS and e-mail,
+		the security state of your Locations of Treasure, Objects of Treasure and Points of Treasure.
+		You will receive text messages and e-mails or log on to your account in the SNOS web site to view your registered security states, as specified by you in your subscription form, on:
+		</p>
+		<h2> SNOS CPE Sensors and Transducer Packages</h2>
+		<p align="left">
+            <ul data-role="listview" data-inset="true" data-filter="true">
+<li>&nbsp;Intrusion?..a person or burglar, thief or armed robber or terrorist trying to have an unauthorized access to your Location of Treasure or  Point of Treasure or tamper with or break into your Object of Treasure<br></li>
+<li>	Someone attempting to jump over any part of your perimeter fence into your compound<br></li>
+<li>	Someone crossing your main gate<br></li>
+<li>	Someone entering your garage<br></li>
+<li>	Someone entering any room of interest<br></li>
+<li>	Someone opening your vault<br></li>
+<li>	Someone attempting to open  any door or window<br></li>
+<li>	Someone inside a space of restricted access<br></li>
+<li>	Gas leakage in your kitchen, warehouse or factory<br></li>
+<li>	Water leakage<br></li>
+<li>	Fire/flame<br></li>
+<li>	Smoke<br></li>
+<li>	Any increase/decrease in ambient temperature above/below a specified threshold<br></li>
+<li>	Any increase/decrease in ambient humidity above/below a specified threshold<br></li>
+<li>	Any increase/decrease in air/wind speed or rotation of a component of a machinery above/below a specified speed<br>
+<li>	State of indoor lighting at ON or OUT (OFF) <br></li>
+<li>	Power ON or OFF state of an electrical appliance/device/facility<br></li>
+<li>	Ability to remotely power ON or OFF an electrical appliance/device/facility from your phone handset or any Internet access device.</li>
+</ul>
+  </p>
+      <h2>Security Network Operation System Customer Premises Equipment Module (SNOS CPE)</h2>
+	  <p>
+          &nbsp;&nbsp;The SNOS CPE consists of a GSM/CDMA SIM card-enabled controller with primary sensor and transducer packages developed by Teledom. The sensors and transducer packages are listed in sec. 2.1. Appropriate SNOS CPEs are installed in the LoT, OoT and PoT as specified by the subscriber.
+		</p>
+
+
+
+
+
+		  </div>
+
+
+</div>
+<footer data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+<section id="pagecontactus" data-role="page" data-theme="d">
+<header data-role="header">
+
+  <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+
+
+    <h1>CONTACT US</h1></header>
+<div class="content" data-role="content">
+
+
+<div data-role="table" cellpadding="0" cellspacing="0"  width="100%" >
+
+
+
+<tr><td   width = "100%"  height= "20" colspan="2" valign="top"   id="td_text">
+
+     <h2 >Contact Us for Participation and Further Information</h2>
+
+<b >Teledom Group<br />
+6A & B Sule Abuka Crescent<br />
+Ikeja, Lagos, NIGERIA<br />
+E-mail: info@snosfortress.com<br />
+ admin@snosfortress.com<br />
+URL: http//www.snosfortress.com<br />
+Tel: +234-7730528,
+</b>
+	</p>
+     </td></tr>
+          <tr>
+             <tr>
+             <td   width = "100%"     id="td_text">
+              <h2>You can Also Cantact us by filling the Form Below: </h2>
+
+                <form   method="POST"   name="form1" >
+                <div data-role="fieldcontain" style="margin-bottom: .5cm;">
+<font face= "Times New Roman" size = "3" color="blue"><label for="fn" >First Name<span style="color:#FF0000">*</span></label></font>
+<br><input type="number" name="fname" maxlength="50" data-inline="true" id="fn" size = "30" placeholder="First Name" >
+</div>
+
+<div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="ln" >Last Name<span style="color:#FF0000">*</span></label></font>
+<br><input type="number" name="lname" maxlength="50" data-inline="true" id="ln" size = "30" placeholder="Last Name" >
+</div>
+
+
+
+
+
+                <div data-role="fieldcontain">
+<font face= "Times New Roman" size = "3" color="blue"><label for="gsma" >Mobile Number<span style="color:#FF0000">*</span></label></font><br>
+<input type="number" name="gsm" data-inline="true" id="gsma" size = "30" placeholder="Mobile Number" >
+</div>
+
+
+                 <div data-role="fieldcontain">
+                <font face= "Times New Roman" size = "3" color="blue"><label for="a111" >Address<span style="color:#FF0000">*</span></label></font>
+                <br><textarea id="a111" cols="20" rows="5" name="address" placeholder="Address"> </textarea>
+                 </div>
+
+                <div data-role="fieldcontain">
+                <font face= "Times New Roman" size = "3" color="blue"><label for="msga" >Message<span style="color:#FF0000">*</span></label></font>
+                <br><textarea id="msga" cols="20" rows="5" name="address" placeholder="Address"> </textarea>
+                 </div>
+
+                <div data-role="fieldcontain" align="center">
+<input type="submit" data-theme="b" value="Submit"   name="action" id="contactform" data-inline="true" data-icon="home">
+<input type="reset" data-theme="d" value="Reset" name="can" data-inline="true" data-iconpos="right" data-icon="reset">
+                </div>
+
+              </form></td></tr>
+		  </div>
+
+
+</div>
+<footer data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+
+
+<section id="pagetechnicalsupport" data-role="page" data-theme="d">
+<header data-role="header">
+
+    <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+
+    <h1>TECHNICAL SUPPORT</h1></header>
+<div class="content" data-role="content">
+
+
+<div data-role="table" cellpadding="0" cellspacing="0" align="center" width="100%" >
+
+
+
+<tr>
+      <td td  width = "100%"   colspan="2" valign="top" >
+          <span id="bigtiltleHeader">Technical Support </span><br>
+       <span  id="tiltleHeader">Maintenance of SNOS Equipment </span></td>
+    </tr>
+		  </div>
+
+
+</div>
+<footer data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></footer>
+</section>
+
+<section id="pagesnosblog" data-role="page" data-theme="d">
+<header data-role="header">
+  <div data-role="table"   cellspacing="0" cellpadding="0" class="tableborder">
+      <tr>
+        <td width="1">
+        <div style="position:absolute;  width:37%; top:0%; background:url('resources/images/cn-bg.gif'); left: 0%;">
+        <div data-role="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1"><img  src="resources/images/logo.jpg" alt="" width="41" height="31" class="logo" ></td>
+    <td  class="company_name">SECURITY NETWORK OPERATION SYSTEM</td>
+  </tr>
+</div>
+        </div>
+
+        <div id="slogan" >
+        SNOS<br/>
+        <img src="resources/images/w17.gif" width="17" height="1">...Securing Your World</div>
+        <img  src="resources/images/bansnos.png" style="width:100%;" alt=""  class="tableborder"></td>
+
+      </tr>
+</div>
+
+
+
+
+    <h1>SNOS BLOG</h1></header>
+<div class="content" data-role="content">
+
+
+<div data-role="table" cellpadding="0" cellspacing="0" align="center" width="100%" >
+
+
+          <span id="bigtiltleHeader">The blog is currently being developed </span><br>
+       <span  id="tiltleHeader">The team is working very hard to set it up sonnest. </span></td>
+
+		  </div>
+
+
+</div>
+<div data-role="footer"><h1>SNOS<i> Mobile</i></h1><center>&copy; 2014 Teledominternational Ltd</center></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

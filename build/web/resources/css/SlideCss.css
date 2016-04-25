@@ -1,0 +1,183 @@
+ #featured{   
+       width:1045; 
+	padding-right:50px; 
+	position:relative; 
+	border:2px #9F9F9F solid ;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius:25px; 
+	height:250px; overflow:hidden;
+	background:#fff;
+	margin-top:5px;
+	margin-bottom:5px;
+	
+	 
+    }  
+	
+	
+	/*positioning the slide show on the best place */
+	
+	#featured ul.ui-tabs-nav{   
+        position:absolute; 
+	    top:0; 
+		left:1045px; 
+	    list-style:none; 
+	    padding:0; margin:0;  
+		height:250px;
+	    overflow:auto;
+	    overflow-x:hidden;  
+    }  
+    #featured ul.ui-tabs-nav li{   
+        padding:1px 0; padding-left:13px;    
+        font-size:12px;   
+        color:#666;   
+    }  
+    #featured ul.ui-tabs-nav li span{   
+        font-size:11px; font-family:Verdana;   
+        line-height:18px;   
+    }  
+	
+	/*positioning the hidden contents of the slide*/
+	
+	    #featured .ui-tabs-panel{   
+		width:1000px; height:250px; 
+	    background:#999; position:relative;
+	    /* margin-right:100px; 
+	   overflow:hidden; */
+    }  
+    #featured .ui-tabs-hide{   
+        display:none;   
+    }  
+	
+	/*Changing the background of the sliding image*/
+	
+	    #featured li.ui-tabs-nav-item a{/*On Hover Style*/   
+        display:block;   
+        height:60px;   
+        color:#333;  background:#fff;   
+        line-height:20px;  
+        outline:none;  
+    }  
+    #featured li.ui-tabs-nav-item a:hover{   
+        background:#f2f2f2;   
+    }  
+   
+   /* #featured li.ui-tabs-selected{ /*Selected tab style*/  
+		/*background-image:url(../slideimage/selected-item.gif) top left no-repeat;   
+    }*/  
+    #featured ul.ui-tabs-nav li.ui-tabs-selected a{   
+        background:#ccc;   
+    }  
+	
+	/*Changing the background of the sliding image*/
+	
+	    #featured ul.ui-tabs-nav li img{   
+        float:left; margin:2px 5px;   
+        background:#fff;   
+        padding:2px;   
+        border:1px solid #eee;  
+    }  
+	
+	
+	
+	
+	    #featured .ui-tabs-panel .info{   
+        position:absolute;   
+        top:176px;
+		left:200px;   
+        height:70px; 
+		width: 600px;  
+		background:url(../slideimage/transparent-bg.png);
+		 
+		  
+    }  
+    #featured .info h2{   
+        font-size:18px; font-family:Georgia, serif;   
+        color:#fff; padding:5px; margin:0;  
+        overflow:hidden;   
+    }  
+    #featured .info p{   
+        margin:0 5px;   
+        font-family:Verdana; font-size:11px;   
+        line-height:15px; color:#f0f0f0;  
+    }  
+    #featured .info a{   
+        text-decoration:none;   
+        color:#fff;   
+    }  
+    #featured .info a:hover{   
+        text-decoration:underline;
+	    color:#FF00FF;   
+    }  
+
+ /*Css for the dropdown menu starts here */
+
+div.dropdown {
+color: #555;
+margin: 3px -22px 0 0;
+width: 143px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+div.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+ border-radius:10px;
+-moz-border-radius:10px;
+-webkit-border-radius:100px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown  li a {
+
+    color: #555555;
+    display: block;
+    font-family: arial;
+    font-weight: bold;
+    padding: 6px 15px;
+   cursor: pointer;
+   text-decoration:none;
+}
+
+.dropdown li a:hover{
+    background:#155FB0;
+    color: #FFFFFF;
+    text-decoration: none;
+
+}
+a.account {
+	font-size: 11px;
+	line-height: 16px;
+	color: #fff;
+	position: absolute;
+	z-index: 110;
+	display: block;
+	padding: 11px 0 0 20px;
+	height: 28px;
+	width: 121px;
+	margin: -11px 0 0 -10px;
+	text-decoration: none;
+	background:url(../images/arrow2.png) 116px 17px no-repeat;
+	cursor:pointer;
+	left: -38px;
+	top: 10px;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
+
+}

@@ -1,0 +1,180 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Jquery Ajax</title>
+     <script  src="resources/jquery-1.9.1.js"></script>
+   <link rel="stylesheet" href="resources/myCss.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+      <h2>How are you today?</h2>
+      <div align="center" id="divTestArea22">
+
+</div>
+<input type="button" name="btnDoRequest" value="Perform calculation" onclick="PerformCalculationWithImageProgress(this);" />
+<img src="load.gif" style="display: none;" id="imgProgress" title="Loading..." alt="Loading..." />
+<br><br>
+    <a href="javascript:void(0);" onclick="ShowElementDimensions();">Show element dimensions</a>
+<div id="divTestArea1" style="height: 100px; width: 400px; padding: 20px; margin: 3px; border: 1px solid silver; background-color: #eee;"></div>
+
+<input type="button" name="btnDoRequest" value="Start" onclick="PerformSimpleCalculation();" /><br>
+    <input type="button" name="btnDoRequest" value="Start Abortable Request" onclick="PerformAbortableCalculation();" /><br><br>
+        <a href="javascript:void(0);" onclick="ShowBrowserDimensions();">Show browser dimensions</a>
+
+<br><a href="javascript:void(0);" onclick="ResizeElement();">Resize element</a>
+<div id="divTestArea3" style="height: 100px; width: 300px; padding: 20px; border: 1px solid silver; background-color: #eee;"></div><br>
+
+E-mail<input type="text" name="mail1" value="afamsimon@gmail.com"><br><br>
+
+    <input type="button" name="btnDoRequest" value="LoadBasic" onclick="LoadBasic(this);" />&nbsp;
+    <div id="divTestArea333" style="height: 800px; width: 800px; padding: 20px; margin: 3px; border: 1px solid silver; background-color: #eee;">
+        
+    </div>
+
+
+   <script type="text/javascript">
+ /*
+ $(function()
+{
+    
+        jQuery.get("content.html", function(data, textStatus)
+        {
+                alert("Done, with the following status: " + textStatus + ". Here is the response: " + data);
+        });
+/*
+   $.post("http://localhost:8084/SnoSSoftwareTest/servlets/RequestProcessing", {
+       email:"afamsimon@gmail.com"
+   }, function(data,textStatus){
+       alert("Response from the Server is: "+data);
+   });
+   
+
+});
+*/
+
+function PerformCalculationWithImageProgress(sender)
+{
+
+    var txt = "afamsimon@gmail.com";
+   var url=" http://localhost:8084/SnoSSoftwareTest/servlets/RequestProcessing";
+   //alert("Are you sure your E-mail is? "+txt);
+     $(sender).val("Loading - please wait...");
+
+    $("#imgProgress").show();
+
+            $.get(url,{action:"ajax",user: txt},function(data,Textstatus)       {
+                 $(sender).val("Perform Calculation");
+
+                $("#imgProgress").hide();
+                alert("Retrieved info is:"+data);
+        }).error(function()
+        {
+                $("#imgProgress").hide();
+                $(sender).val("Try again");
+                alert("An error occurred")
+               // alert("The request obj is:"+req)
+                 
+        });
+
+}
+var calculationRequest = null;
+
+function PerformSimpleCalculation()
+{
+
+
+        $("#divTestArea22").load("http://localhost:8084/SnoSSoftwareTest/index.jsp",function(responseText,statusText,xhr)
+        {
+                alert(responseText);
+        });
+}
+
+function PerformAbortableCalculation()
+{
+        if(calculationRequest != null)
+                calculationRequest.abort();
+        calculationRequest = $.get("/tests/calc.php", function(data, textStatus)
+        {
+                alert(textStatus);
+        });
+}
+function ShowElementDimensions()
+{
+        var result = "";
+
+        result += "Dimensions of div: " + $("#divTestArea1").width() + "x" + $("#divTestArea1").height() + "</br>";
+        result += "Inner dimensions of div: " + $("#divTestArea1").innerWidth() + "x" + $("#divTestArea1").innerHeight() + "</br>";
+        result += "Outer dimensions of div: " + $("#divTestArea1").outerWidth() + "x" + $("#divTestArea1").outerHeight() + "</br>";
+        result += "Outer dimensions of div (with margin): " + $("#divTestArea1").outerWidth(true) + "x" + $("#divTestArea1").outerHeight(true) + "</br>";
+
+        $("#divTestArea1").html(result);
+}
+
+
+function ShowBrowserDimensions()
+{
+        alert("Dimensions of document: " + $(document).width() + "x" + $(document).height());
+        alert("Dimensions of window: " + $(window).width() + "x" + $(window).height());
+}
+
+function ResizeElement()
+{
+        $("#divTestArea3").width(150).height(50);
+}
+
+      
+$(function(){
+var txt = "afamsimon@gmail.com";
+alert("Are you sure your E-mail is? "+txt);
+$.ajax({
+    url: "http://localhost:8084/SnoSSoftwareTest/index.jsp",
+    type: 'get',
+    data  : { user: txt,action:"ajax" },
+    success: function(data) {
+        alert("The Retrieved info is:"+data);
+    },
+    error : function(err, req) {
+        alert("Your browser broke! The cause is \n"+req);
+    }
+});
+
+})
+
+function LoadBasic(sender)
+{
+
+   // $.ajaxSetup ({
+      //  cache: false
+   // });
+    var txt = "afamsimon@gmail.com";
+    alert("Are you sure your E-mail is? "+txt);
+    var ajax_load = "<img src='load.gif' title='loading... pls wait!' />";
+
+//  load() functions
+    var loadUrl = "http://localhost:8084/SnoSSoftwareTest/servlets/index.jsp";
+    
+        $("#divTestArea333").html(ajax_load)
+            load(loadUrl, {"action":"ajax","user":txt}, function(responseText){
+            alert("Response ISSS:\n" + responseText);
+        });
+//});
+}
+
+
+
+$(function()
+{
+        $("#divTestArea333").load("http://localhost:8084/SnoSSoftwareTest/user_register.jsp",function(responseText,statusText){
+            alert("Response ISSS:\n" + responseText+" and statusText is "+statusText);
+        });
+});
+
+
+
+   </script>
+  </body>
+</html>

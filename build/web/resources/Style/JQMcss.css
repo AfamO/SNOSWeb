@@ -1,0 +1,112 @@
+/* 
+    Document   : JQMcss
+    Created on : Jun 24, 2014, 5:16:22 PM
+    Author     : fupre1
+    Description:
+        Purpose of the stylesheet follows.
+        This stylesheet is used for SNOS JQWERY MOBILE  WEB APP.
+        It stylizes some of the things in the index.html page of the mobile web app
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+body {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 90%;
+		}
+
+ui-page {
+  -webkit-backface-visibility: hidden;
+}
+body{
+  overflow:hidden;
+}
+root { 
+    display: block;
+}
+a.account {
+	font-size: 11px;
+	line-height: 16px;
+	color: #fff;
+	position: absolute;
+	z-index: 110;
+	display: block;
+	padding: 11px 0 0 20px;
+	height: 28px;
+	width: 121px;
+	margin: -11px 0 0 -10px;
+	text-decoration: none;
+	background:url(../images/arrow2.png) 116px 17px no-repeat;
+	cursor:pointer;
+	left: -38px;
+	top: 10px;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
+
+}
+.tableborder {
+    border-radius:10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;
+    width:100%;
+    height:100%;
+    position:relative;
+
+	}
+.company_name {font-size: 18px;font-weight: normal;text-transform: uppercase;color: #48555a;}
+#slogan {
+	position:absolute;
+	margin-left:570px;
+	top:42px;
+	color: #1b5989;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 17px;
+	width: 200px;
+	left: 229px;
+}
+.logo {
+margin-top: 9px;
+margin-right: 10px;
+margin-bottom: 9px;
+margin-left: 24px;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:18px;
+}
+ h1 {
+        color: #36C;
+        font-weight: normal;
+        letter-spacing: .4em;
+        margin-bottom: 19em;
+        text-transform: lowercase;
+    }

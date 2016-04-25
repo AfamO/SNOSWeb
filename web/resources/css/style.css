@@ -1,0 +1,268 @@
+body {
+margin:0;
+padding:0;
+background-image:url(../images/mainbgimage.gif)
+
+}
+p,td { font-family:Arial, Helvetica, sans-serif; 
+margin-top: 0px;
+}
+
+
+form {
+margin:0;
+padding:0;
+}
+ul {
+margin-left:20px;
+margin-top:0px;
+padding:1px;list-style-type: square;
+line-height: 16px;
+}
+h1 {font-size: 14px;font-weight: bold;
+color: #000000;margin: 0px;padding-left: 17px;text-transform: uppercase;
+padding-top: 14px;padding-bottom: 7px;}
+.hbg {
+background-image:url(../images/hbg.gif);
+background-repeat: repeat-x;
+}
+.bgy {background-repeat: repeat-y;}
+.bgx {background-repeat: repeat-x;}
+
+.tableborder {
+    border-radius:10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px; 
+	}
+	
+.mbg {
+background-color: #F1F8FE;
+background-image: url(../images/mbg.jpg);
+background-repeat: no-repeat;
+background-position: top;
+width:250px;
+}
+.bottom_addr {font-size: 12px;color: #FFFFFF;padding-top: 3px;padding-bottom: 8px;text-align: center;}
+.bottom_addr a {text-decoration: none;}
+.bottom_addr a:hover {text-decoration: underline;}
+.bottom_menu {color: #FFFFFF;text-align: center;padding-top: 12px;padding-bottom: 2px;font-size: 11px;}
+.bottom_menu a {color: #FFFFFF;text-decoration: underline;}
+.bottom_menu a:hover {color: #6DD0F5;text-decoration: underline;}
+.menu {	color: #00648b;background-image: url(../images/m-bul.gif);background-repeat: no-repeat;font-weight: bold;padding-right: 30px;	padding-left: 10px;white-space: nowrap;font-family: Tahoma, Arial;font-size: 11px;text-align: right;padding-top: 3px;padding-bottom: 3px;background-position: 167px 7px;}
+.menu a{text-decoration: none;color: #00648b;}
+.c-sep-bg {background-image: url(../images/c-sep-bg.gif);background-repeat: repeat-x;background-position:17px;}
+.logo {
+margin-top: 9px;
+margin-right: 10px;
+margin-bottom: 9px;
+margin-left: 24px;
+font:Verdana, Arial, Helvetica, sans-serif; 
+font-weight:bold; 
+font-size:18px;
+}
+.menu a:hover {color: #00A0DD;text-decoration: none;}
+.sub {color: #e2aa0f;text-transform: none;vertical-align: top;padding-top: 4px;padding-right: 5px;}
+.sub a{color: #e2aa0f;text-decoration: none;}
+.bot-bg {background-image: url(../images/bot-bg.gif);background-repeat: repeat-x;background-position: top;}
+.sub a:hover {color: #e2aa0f;text-decoration: underline;}
+.body_txt {color: #000000;text-align: justify;vertical-align: top;font-size: 12px;padding-top: 7px;padding-right: 17px;padding-bottom: 10px;padding-left: 17px;}
+.company_name {font-size: 18px;font-weight: normal;text-transform: uppercase;color: #48555a;}
+#slogan {
+	position:absolute;
+	margin-left:570px;
+	top:42px;
+	color: #1b5989;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 17px;
+	width: 200px;
+	left: 229px;
+}
+
+#Welcome {
+	position:absolute;
+	padding-left:30px;
+	top:141px;
+	color: #1b5989;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 17px;
+	width: 200px;
+	left: 150px;
+	color:#FF00FF;
+	background:url(../slideimage/transparent-bg.png);
+}
+.login_form {background-image: url(../images/login-form-bg.gif);background-repeat: repeat-x;height: 20px;width: 110px;border-width: 1px;border-style: solid;font-size: 11px;padding-top: 3px;padding-left: 1px;}
+
+
+#menuHyperlink a, a:visited{
+	width: 80px;
+	height: 25px;
+	
+	/*#AE2D0D;url(images/a_link.gif) no-repeat;background: #303 
+	margin: 0 0 0 2px;
+	padding: 9px 0 0 0;;*/
+	font:14px/36px 'Segoe UI Light','Segoe UI',Verdana, Geneva, sans-serif;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-radius:6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius:6px;
+	
+}
+
+#menuHyperlink a:hover{
+	text-decoration:underline;
+	color:#fff;
+	background-color:#303;
+	margin: 0 0 0 1px;
+	padding: 20px 0 0 0;
+	
+
+}
+
+#logoutHyperlink a, a:visited{
+	width: 80px;
+	height: 25px;
+	text-decoration: none;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-radius:6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius:6px;
+	
+}
+
+#logoutHyperlink a:hover{
+	text-decoration:underline;
+    color:#0000FF;
+	background-color:#303;
+	margin: 0 0 0 1px;
+	padding: 2px 0 0 0;
+	
+
+}
+ #menuHyperlink.current_page_item a {
+	color:#900;
+}
+
+/*a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+	 color:#93C;
+	 font:Verdana, Geneva, sans-serif;
+	 font:14px/36px 'Segoe UI Light','Segoe UI',Verdana, Geneva, sans-serif;
+	color:#FFFFFF;
+	font-weight:bold;
+	
+	
+	word-spacing:normal;
+	color:#fff;
+	font:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	
+	
+}
+
+
+
+a:hover{
+	text-decoration:underline;
+	color:#900;
+	background-color:#93c;
+	
+
+}
+*/
+
+.Imagedisplay{
+margin-bottom:10px;
+margin-left:20px;
+margin-top:10px;
+border-radius:6px;
+-moz-border-radius: 6px;
+-webkit-border-radius:6px;
+	
+}
+
+#logoMain  {
+     float: left;
+     padding-right: 20px;
+     padding-bottom: 10px;
+}
+
+.Hyperlink{
+	
+	/* hyperlink */
+	
+	opacity:0.9;
+	width:80%;
+	height:25px;
+	border-radius:6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius:6px;
+	box-shadow:0 1px 1px #888;
+	
+	
+	/* CSS3 Gradients */
+	
+	background-image: linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(80,102,127)),
+		color-stop(0.5, rgb(87,109,136)),
+		color-stop(1, rgb(106,129,155))
+	);
+}
+* { font-size: 12px; font-family: Verdana }
+
+input, textarea { border: 1px solid #ccc }
+
+tr { margin: 5px; padding:5px;}
+
+.alert { font-size:15px; color:red; font-weight:bolder }
+#progressBar {
+
+        width: 400px;
+
+        height: 22px;
+
+        border: 1px solid #111;
+
+        background-color: #292929;
+
+}
+
+
+
+#progressBar div {
+
+        height: 100%;
+
+        color: #fff;
+
+        text-align: right;
+
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+
+        width: 0;
+
+        background-color: #0099ff;
+}
