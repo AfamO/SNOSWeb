@@ -85,7 +85,7 @@
 
 <form onsubmit="return VerifyToken();" method="POST"  action="servlets/RequestProcessing"  name="form5" >
 <tr><td align="center" width = "100%"  height= "5" ><font color="blue" size="3" face="Times New Roman">Token:</font><span style="color:#FF0000">*</span>
-<br /><input type="text" size = "30" name = "token" maxlength="50"></td>
+<br /><input type="text" required size = "30" name = "token" maxlength="50"></td>
 </tr>
 
 <tr><td align="center" width = "100%"  height= "20" colspan="2" >

@@ -189,15 +189,15 @@
          
         </tr>
         <tr>
-          <td height="20" align="center"><input type="text"  name="userid" onchange="return LoginFormValidation();" id="loginEmail" size="18" class="logintext" placeholder="Username"/></td>
+          <td height="20" align="center"><input type="text" required  name="userid" onchange="return LoginFormValidation();" id="loginEmail" size="18" class="logintext" placeholder="Username"/></td>
           <td ></td>
 		  <tr><td height="20" align="center">
-          <input type="password" name="password" onchange="return LoginFormValidation();"  id="loginPass" size="18" class="logintext" placeholder="Password"/></td>
+          <input type="password" required name="password" onchange="return LoginFormValidation();"  id="loginPass" size="18" class="logintext" placeholder="Password"/></td>
         </tr>
        
 <tr>
 
-<td id="ImgTxt" height="20" align="center">Please Enter the image below:<input type="text" name="code" size="18" id="loginEmail" class="logintext" placeholder="Captcha Image"></td>
+<td id="ImgTxt" height="20" align="center">Please Enter the image below:<input type="text" required name="code" size="18" id="loginEmail" class="logintext" placeholder="Captcha Image"></td>
 </tr>
  <tr>
 

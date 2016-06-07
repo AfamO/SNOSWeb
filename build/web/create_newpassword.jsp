@@ -85,16 +85,16 @@
 
 <form onsubmit="return CreatePassWordFormValidation();" method="POST"  action="servlets/RequestProcessing"  name="form5" >
 <tr><td align="center" width = "100%"  height= "5" ><font color="blue" size="3" face="Times New Roman">Email:</font><span style="color:#FF0000">*</span>
-<br /><input type="email" size = "30" name = "e-mail" maxlength="50"></td>
+<br /><input type="email" size = "30" required name = "e-mail" maxlength="50"></td>
     
  
 </tr> 
 <tr ><td align="center" width = "100%"  height= "5" ><font color="blue" size="3" face="Times New Roman"> New Password:</font><span style="color:#FF0000">*</span>
-   <input type="password" size = "30" name = "npass" maxlength="50" style="margin-right:30px;">
+   <input type="password" size = "30" required name = "npass" maxlength="50" style="margin-right:30px;">
 
 </td></tr>
 <tr><td align="center" width = "100%"  height= "5" ><font color="blue" size="3" face="Times New Roman"> Verify New Password:</font><span style="color:#FF0000">*</span>
-   <input type="password" size = "30" name = "vnpass" maxlength="50" style="margin-right:30px;">
+   <input type="password" size = "30" required name = "vnpass" maxlength="50" style="margin-right:30px;">
 
 </td></tr>
 <tr><td align="center" width = "100%"  height= "20" colspan="2" >

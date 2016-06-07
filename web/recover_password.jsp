@@ -85,7 +85,7 @@
 
 <form onsubmit="return RecoverPassWordFormValidation();" method="POST"  action="servlets/RequestProcessing"  name="form5" >
 <tr><td align="center" width = "100%"  height= "5" ><font color="blue" size="3" face="Times New Roman">Email:</font><span style="color:#FF0000">*</span>
-<br /><input type="email" size = "30" name = "e-mail" maxlength="50"></td>
+<br /><input type="email" required size = "30" name = "e-mail" maxlength="50"></td>
     
  <td align="center" width = "100%"  height= "5" >   <span  id="forgetpassword">Received Token?<a href="token_verifier.jsp" >Verify</a></span></td>
 </tr> 

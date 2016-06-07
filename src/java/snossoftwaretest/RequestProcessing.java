@@ -194,7 +194,7 @@ public class RequestProcessing extends HttpServlet
                      if(pc.checkUserName(request.getParameter("Sname").trim(), "Client Name", "Okonkwo or Ugwu")
                      && pc.checkUserName(request.getParameter("Oname").trim(), "Other Name", "Surname FirstName LastName") && pc.checkGsm(request.getParameter("gsm").trim(), "Snos Gsm Field", "234xxxxxxxxxx or 080xxxxxxxx") && pc.checkEmail(request.getParameter("email1").trim(),"Client's Email","newuser@snosfotress.com")
                      && pc.checkLocation(request.getParameter("address").trim(), "Client's Location","5 Sule Abuka Crescent,Opebi,Ikeja") && pc.checkUserName(request.getParameter("state").trim(),"State Field" , "Enugu or Anambra or Lagos") && !(lga.contains("Choose one") ||lga.equals(""))
-                     && pc.checkArbitraryField(request.getParameter("pass").trim(),"Password Field" , "Bungallow or Duplex or One-Bedroom Flat"))
+                     && pc.validatePassword(request.getParameter("pass").trim(),"Password Field" , "Bungallow or Duplex or One-Bedroom Flat"))
                      {
                          // Ensure that both the two passwords(both the password and Verify or Confirm password) fields march  
                          if(!request.getParameter("pass").trim().equals(request.getParameter("vpass").trim()))
@@ -344,7 +344,7 @@ public class RequestProcessing extends HttpServlet
                             else
                             {
                                 //compose and send  error message to the desktop browser.
-                                session.setAttribute("errmsg","One of your fields has invalid inputs like numbers,or has too long letters.Also verify that you didn't enter special characters(eg:!,','',$,%) or any other wrong input(s) and Make sure  that you entered the correct gsm and email formats.<br>Thank you");
+                                session.setAttribute("errmsg","One of your fields has invalid inputs like numbers,or has too long letters.Also verify that you didn't enter special characters(eg:!,','',$,%) or any other wrong input(s) in non-password fields and Make sure  that you entered the correct gsm and email formats.Finally ensure your passwords obeys these rules:<br>Atleast: One digit,one lowercase letter, one uppercase letter, one special character.Secondly: There must not be a space in the entire password string and total number of the characters must be atleast 8.<br>Thank you");
                                 response.sendRedirect(request.getContextPath()+"/user_register.jsp");
                             }
                         }
@@ -428,16 +428,16 @@ public class RequestProcessing extends HttpServlet
                                     
                                     //construct the form for the 3rd stage of registration-dynamically-and then store it in the session to print it in the jsp file of the 3rd stage.
                                     String form="<form onsubmit='return FormValidation3();'   method='POST'  action='servlets/RequestProcessing'  name='form3' >";
-                                    form+=" <tr><td align='center' width = '100%'  height= '20' > <font face= 'Times New Roman' size = '3' color='blue'>Name:</font><span style='color:#FF0000'>*</span><input type='text' size = '30' name = 'nam' maxlength='50' placeholder='Name'  style='margin-right:30px;'></td></tr>";
+                                    form+=" <tr><td align='center' width = '100%'  height= '20' > <font face= 'Times New Roman' size = '3' color='blue'>Name:</font><span style='color:#FF0000'>*</span><input type='text' required size = '30' name = 'nam' maxlength='50' placeholder='Name'  style='margin-right:30px;'></td></tr>";
                                     form+="<tr><td  align='center' width = '100%'  height= '20' >";
                                     form+="<font face= 'Times New Roman' size = '3' color='blue'>Relationship/Position:</font><span style='color:#FF0000'>*</span>";
-                                    form+="<br /><input type='text' size = '30' name = 'relation_pos' maxlength='50'></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>Mobile Number:</font><span style='color:#FF0000'>*</span>";
-                                    form+="<input type='text' size = '30' onchange=\"return checkEmail_GsmBeforeRegistrationAddress(this.value,'gsm');\" name = 'fone' maxlength='50' style='margin-right:30px;' >";
+                                    form+="<br /><input type='text' required size = '30' name = 'relation_pos' maxlength='50'></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>Mobile Number:</font><span style='color:#FF0000'>*</span>";
+                                    form+="<input type='text' required size = '30' onchange=\"return checkEmail_GsmBeforeRegistrationAddress(this.value,'gsm');\" name = 'fone' maxlength='50' style='margin-right:30px;' >";
                                     form+="</td></tr>";
                                     form+="<tr><td  align='center' width = '100%'  height= '20' >";
                                     form+="<font face= 'Times New Roman' size = '3' color='blue'>Address:</font><span style='color:#FF0000'>*</span>";
                                     form+="<br /><textarea cols='20' rows='4' name='address'> </textarea></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>E-mail:</font><span style='color:#FF0000'>*</span>";
-                                    form+="<input type='text' size = '30' onchange=\"return checkEmail_GsmBeforeRegistrationAddress(this.value,'myemail');\" name = 'email1' maxlength='50' style='margin-right:30px;' >";
+                                    form+="<input type='email' required size = '30' onchange=\"return checkEmail_GsmBeforeRegistrationAddress(this.value,'myemail');\" name = 'email1' maxlength='50' style='margin-right:30px;' >";
                                     form+="</td></tr><tr><td width='400' height='10'  align='center' colspan='2'> <font face='Times New Roman' size='5' color='red'>Do you wish to Register additional contacts-It is highly recommended that you do?:" +"<span style='color:#FF0000'>*</span></font></td></tr>"+
 
                                         "<tr><td><font face= 'Times New Roman' size = '6' color='blue'>NO</font><input type='radio' checked   name='extra_contact' value='no'></td><td  align='center' width = '100%'  height= '20' >" +
@@ -1281,10 +1281,11 @@ public class RequestProcessing extends HttpServlet
               //String captcha = (String)session.getAttribute("captcha");
               // String code = (String)request.getParameter("code").trim();
               //vallidate both the user's name and password with the Pattern Check class.
-              if(pc.checkEmail(mail1,"Client's Email","newuser@snosfotress.com")&& pc.checkArbitraryField(pass,"PassWorld Field","af1aba"))
+              if(pc.checkEmail(mail1,"Client's Email","newuser@snosfotress.com"))
               {
+                  
                   //get the the client's SNOS nunber
-                  String snos=  rs.RetrieveItem("clients_temp_tab", "email1", mail1, "snos_type");
+                  String snos=  rs.RetrieveItem("clients_temp_tab", "email1", mail1, "snos_type"); 
                   //store it in a session as property "snos_type"
                   session.setAttribute("snos_type", snos);
                   snos=  session.getAttribute("snos_type").toString();
@@ -1293,6 +1294,7 @@ public class RequestProcessing extends HttpServlet
                   // retrieve the status of the user's registration from the permamnet registration table to know whether his registration has been
                   //"ACTIVATED" or "UNACTIVTED"
                   String finalstatus=rs.RetrieveItem("clients_tab","snos_type",snos,"status");
+                  out.println("Not Great!!!");
                   if(finalstatus.equals(""))
                   {
                       //then the user's data cannot be found at all at the permanent table
@@ -1352,16 +1354,16 @@ public class RequestProcessing extends HttpServlet
                               session.setAttribute("status","Please Kindly do  Complete Your Registration.You stopped at the second stage, you will now continue from Client's Contacts Registration.<br>Thank you.");
                               //construct the form for the 3rd stage of registration-dynamically-and then store it in the session to print it in the jsp file of the 3rd stage.
                               String form="<form onsubmit='return FormValidation3();'   method='POST'  action='servlets/RequestProcessing'  name='form3' >";
-                              form+=" <tr><td align='center' width = '100%'  height= '20' > <font face= 'Times New Roman' size = '3' color='blue'>Name:</font><span style='color:#FF0000'>*</span><input type='text' size = '30' name = 'nam' maxlength='50' placeholder='Name'  style='margin-right:30px;'></td></tr>";
+                              form+=" <tr><td align='center' width = '100%'  height= '20' > <font face= 'Times New Roman' size = '3' color='blue'>Name:</font><span style='color:#FF0000'>*</span><input type='text' required size = '30' name = 'nam' maxlength='50' placeholder='Name'  style='margin-right:30px;'></td></tr>";
                               form+="<tr><td  align='center' width = '100%'  height= '20' >";
                               form+="<font face= 'Times New Roman' size = '3' color='blue'>Relationship/Position:</font><span style='color:#FF0000'>*</span>";
-                              form+="<br /><input type='text' size = '30' name = 'relation_pos' maxlength='50'></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>Mobile Number:</font><span style='color:#FF0000'>*</span>";
-                              form+="<input type='text' size = '30' onchange='return checkEmail_GsmBeforeRegistrationAddress_Form3(this.value,'gsm');' name = 'fone' maxlength='50' style='margin-right:30px;' >";
+                              form+="<br /><input type='text' required size = '30' name = 'relation_pos' maxlength='50'></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>Mobile Number:</font><span style='color:#FF0000'>*</span>";
+                              form+="<input type='text' required size = '30' onchange='return checkEmail_GsmBeforeRegistrationAddress_Form3(this.value,'gsm');' name = 'fone' maxlength='50' style='margin-right:30px;' >";
                               form+="</td></tr>";
                               form+="<tr><td  align='center' width = '100%'  height= '20' >";
                               form+="<font face= 'Times New Roman' size = '3' color='blue'>Address:</font><span style='color:#FF0000'>*</span>";
                               form+="<br /><textarea cols='20' rows='4' name='address'> </textarea></td><td align='center' width = '100%'  height= '20' ><font face= 'Times New Roman' size = '3' color='blue'>E-mail:</font><span style='color:#FF0000'>*</span>";
-                              form+="<input type='text' size = '30' onchange='return checkEmail_GsmBeforeRegistrationAddress_Form3(this.value,'myemail');' name = 'email1' maxlength='50' style='margin-right:30px;' >";
+                              form+="<input type='email' size = '30' required onchange='return checkEmail_GsmBeforeRegistrationAddress_Form3(this.value,'myemail');' name = 'email1' maxlength='50' style='margin-right:30px;' >";
                               form+="</td></tr><tr><td width='400' height='10'  align='center' colspan='2'> <font face='Times New Roman' size='5' color='red'>Do you wish to Register additional contacts-It is highly recommended that you do?:" +"<span style='color:#FF0000'>*</span></font></td></tr>"+
 
                               "<tr><td><font face= 'Times New Roman' size = '6' color='blue'>NO</font><input type='radio' checked   name='extra_contact' value='no'></td><td  align='center' width = '100%'  height= '20' >" +
@@ -1478,7 +1480,6 @@ public class RequestProcessing extends HttpServlet
                  //and view his/her alerts(if there are any) and his/her other personal info.
                  else if((rs.CheckClientsLoginParameters(mail1, pass,"clients_tab"))&& (status.equalsIgnoreCase("3c")&& finalstatus.equalsIgnoreCase("ACTIVATED")))
                  {
-                     
                      //retrieve from database and store also his SNOS number in a session to be refernced later.
                      String sid =rs.RetrieveItem("clients_tab", "email1", mail1, "snos_type");
                      //Is this request coming from mobile device?
@@ -1673,7 +1674,8 @@ public class RequestProcessing extends HttpServlet
                      //Then it must be coming from PC desktop web browser
                      else
                      {
-                         session.setAttribute("errmsg","Uknown Username or/and Password");
+                         out.println("Not Great!!!");
+                         session.setAttribute("errmsg"," Uknown Username or/and Password");
                          response.sendRedirect(request.getContextPath()+"/index.jsp");
                      }
                  }

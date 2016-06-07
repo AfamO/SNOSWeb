@@ -38,6 +38,7 @@ public class PatternCheck
     private static final String ARBITRARYFIELD = "[A-Z,0-9,_.,;,-[ ]{0,5}]{4,25}";
     private static final String sensorFIELD = "[A-Z,0-9,.,;,-,[ ]{0,5}]{7,50}";
     private static final String EMAIL="[a-z]{2}[a-z,0-9,_.]{1,15}[@]{1}[a-z,0-9,_.]{3,20}[.]{1}[a-z]{3}";
+    private static final String PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
     private Matcher matcher;
     private Pattern pattern;
     public PatternCheck()
@@ -188,6 +189,28 @@ public class PatternCheck
         pattern=Pattern.compile(EMAIL,Pattern.CASE_INSENSITIVE);
         //get matcher object.
         matcher=pattern.matcher(email);
+        if(matcher.matches())
+        {
+            //print out for debugging purposes.
+            System.out.println("Valid "+label+" .Your "+label+"\n should be in this format:\n"+format+"\nThank You");
+            return true;
+        }
+        System.out.println("Invalid "+label+" .Your "+label+"\n should be in this format:\n"+format+"\nThank You");
+        return false;
+    }
+    /**
+    * This method validates the client's password's field input.
+    * @param loc String object representing the client's email address's field input. 
+    * @param format String object representing the right format it should follow.This is ONLY used for debugging purposes.
+    * @param label String object representing the label for error message.This is ONLY used for debugging purposes.
+    * @return Boolean -It returns true if validated successfully or false otherwise.
+    **/
+    public boolean validatePassword(String password,String label,String format)
+    {
+        //get the pattern object by compiling using a pre-defined pattern format and make it case insensitive.
+        pattern=Pattern.compile(PASSWORD,Pattern.CASE_INSENSITIVE);
+        //get matcher object.
+        matcher=pattern.matcher(password);
         if(matcher.matches())
         {
             //print out for debugging purposes.

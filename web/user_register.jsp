@@ -52,15 +52,15 @@
 <form onSubmit="return FirstFormValidation();"  method="POST"  action="servlets/RequestProcessing"  name="form1" >
    
    <tr><td   align="center" width = "100%"  height= "20">
-	<font face= "Times New Roman" size = "3" color="blue">SurName:</font><span style="color:#FF0000">*</span><br /><input  type="text" size = "30"  name = "Sname" maxlength="50" placeholder="Surname"></td>
-	<td align="center" width = "100%"  height= "20" > <font face= "Times New Roman" size = "3" color="blue">Other Name:</font><span style="color:#FF0000">*</span><input type="text" size = "30" name = "Oname" maxlength="50" placeholder="Other Names"  style="margin-right:30px;">  </td>
+	<font face= "Times New Roman" size = "3" color="blue">SurName:</font><span style="color:#FF0000">*</span><br /><input  type="text" required size = "30"  name = "Sname" maxlength="50" placeholder="Surname"></td>
+	<td align="center" width = "100%"  height= "20" > <font face= "Times New Roman" size = "3" color="blue">Other Name:</font><span style="color:#FF0000">*</span><input type="text" required size = "30" name = "Oname" maxlength="50" placeholder="Other Names"  style="margin-right:30px;">  </td>
     <div id="onmsg"></div>
    </tr>
    
    <tr><td  align="center" width = "100%"  height= "20" >
-<font face= "Times New Roman" size = "3" color="blue">Mobile Number:</font><span style="color:#FF0000">*</span>
-<br /><input  type="text" size = "30" onchange="return checkEmail_GsmBeforeRegistrationAddress(this.value,'gsm');"  name = "gsm" maxlength="50"></td><td align="center" width = "100%"  height= "20" ><font face= "Times New Roman" size = "3" color="blue">E-mail:</font><span style="color:#FF0000">*</span>
-<input type="text" size = "30" onchange="return checkEmail_GsmBeforeRegistrationAddress(this.value,'myemail');" name = "email1"  maxlength="50" style="margin-right:30px;" >
+<font face= "Times New Roman" required size = "3" color="blue">Mobile Number:</font><span style="color:#FF0000">*</span>
+<br /><input  type="text" required size = "30" onchange="return checkEmail_GsmBeforeRegistrationAddress(this.value,'gsm');"  name = "gsm" maxlength="50"></td><td align="center" width = "100%"  height= "20" ><font face= "Times New Roman" size = "3" color="blue">E-mail:</font><span style="color:#FF0000">*</span>
+<input type="email" required size = "30" onchange="return checkEmail_GsmBeforeRegistrationAddress(this.value,'myemail');" name = "email1"  maxlength="50" style="margin-right:30px;" >
 </td></tr>
 
 <tr><td  align="center" width = "100%"  height= "20" >
@@ -124,7 +124,7 @@
      <select  id="mylg" name="lga" onchange="getMyLGValue(this.value);" >
      </select>
      
-<input  id="mylgaa" type="text" size = "20" placeholder="Enter you LGA here" name = "lgaa"  maxlength="50" style="margin-right:30px;" ></td>
+<input  id="mylgaa" required type="text" size = "20" placeholder="Enter you LGA here" name = "lgaa"  maxlength="50" style="margin-right:30px;" ></td>
 
 </td></tr>
 <tr>
@@ -141,9 +141,9 @@
 
 
 <tr><td align="center" width = "100%"  height= "20" ><font color="blue" size="3" face="Times New Roman">Password:</font><span style="color:#FF0000">*</span>
-        <br /><input type="password" size = "30" name = "pass"  maxlength="50"></td>
+        <br /><input type="password" required size = "30" name = "pass"  maxlength="50"></td>
 <td align="center" width = "100%"  height= "20" ><font color="blue" size="3" face="Times New Roman"> Verify Password:</font><span style="color:#FF0000">*</span>
-   <input type="password" size = "30"  name = "vpass" maxlength="50" style="margin-right:30px;">
+   <input type="password" size = "30" required  name = "vpass" maxlength="50" style="margin-right:30px;">
 
 </td></tr>
 

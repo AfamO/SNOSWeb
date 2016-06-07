@@ -18,10 +18,6 @@
 
 
 
-
-
-
-
 <td  class="mbg" width="250" valign="top">
 
 
@@ -103,7 +99,7 @@
 <%session.removeAttribute("status"); %>
 
 <form onsubmit="return FormValidation2();" method="POST"  action="servlets/RequestProcessing"  name="form2" >
-<tr><td   align="center" width = "100%"  height= "20"><font face= "Times New Roman" size = "3" color="blue">Name:</font><span style="color:#FF0000">*</span><br /><input type="text" size = "30" name = "nam" maxlength="50" placeholder="Devices's Name"></td><td align="center" width = "100%"  height= "20" > <font face= "Times New Roman" size = "3" color="blue">Housing Type:</font><span style="color:#FF0000">*</span><input type="text" size = "30" name = "house_type" maxlength="50" placeholder="Type of Structure housing your equipment"  style="margin-right:30px;"></td></tr>
+<tr><td   align="center" width = "100%"  height= "20"><font face= "Times New Roman" size = "3" color="blue">Name:</font><span style="color:#FF0000">*</span><br /><input type="text" size = "30" required name = "nam" maxlength="50" placeholder="Devices's Name"></td><td align="center" width = "100%"  height= "20" > <font face= "Times New Roman" size = "3" color="blue">Housing Type:</font><span style="color:#FF0000">*</span><input type="text" size = "30" required name = "house_type" maxlength="50" placeholder="Type of Structure housing your equipment"  style="margin-right:30px;"></td></tr>
 <tr><td  align="center" width = "100%"  height= "20" >
 <font face= "Times New Roman" size = "3" color="blue">Description:</font><span style="color:#FF0000">*</span>
 <br /><textarea cols="20"  rows="4" name="description"> </textarea></td><td  align="center" width = "100%"  height= "20" ><font face= "Times New Roman" size = "3" color="blue">Location(in the house):</font><span style="color:#FF0000">*</span>
