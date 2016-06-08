@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--<Context antiJARLocking="true" path="/SnoSSoftwareTest3"/>-->
-<Context path="/SnoSSoftwareTest3">
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/snosDB" password="snos1" type="javax.sql.DataSource" url="jdbc:mysql://mysql1001.mochahost.com:3306/teledom_snossmsdb" username="teledom_snos" removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="true"
-  validationQuery="select now();"/>
-</Context>
-
